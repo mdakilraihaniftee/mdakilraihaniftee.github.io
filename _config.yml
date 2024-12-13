@@ -9,14 +9,12 @@ last_name: Iftee
 contact_note: >
   Feel free to reach out via email or LinkedIn.
 description: > 
-  My name is Md. Akil Raihan Iftee. I am working as a Post-baccalaureate Research Assistant at the Center for Computational & Data Sciences (CCDS) Lab, Independent University, Bangladesh. My research is supervised by Dr. Md AKM Mahbubur Rahman and Dr. Amin Ahsan Ali. Currently, my research focuses on multi-modal learning, foundation models, test-time domain adaptation, federated learning, and human activity recognition. I am fortunate to collaborate with and receive mentorship from Aman Chadha and Dr. Md Mofijul Islam. Previously, my undergraduate research, supervised by  Sunanda Das at KUET, focused on 3D cerebrovascular segmentation using semi-supervised methods. I completed my Bachelor’s from the Department of Computer Science and Engineering, Khulna University of Engineering & Technology (KUET), with a CGPA of 3.73. I am actively seeking research collaborations and Ph.D. opportunities.
+  
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-#keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+  
+keywords: #jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: /assets/img/prof_pic.jpg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: prof_pic.jpg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://mdakilraihaniftee.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -62,11 +60,57 @@ max_width: 930px
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
-# Display links to the page with a preview object on social media.
+# Display links to the page with a preview object on  media.
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: false # Include Open Graph meta tags in the HTML head
 serve_schema_org: false # Include Schema.org in the HTML head
 og_image: # The site-wide (default for all links) Open Graph preview image
+
+
+# -----------------------------------------------------------------------------
+# Social integration
+# -----------------------------------------------------------------------------
+
+acm_id: # your dl.acm.org/profile/id
+blogger_url: # your blogger URL
+bluesky_url: # your bluesky URL
+dblp_url: # your DBLP profile url
+discord_id: # your discord id (18-digit unique numerical identifier)
+facebook_id: # your facebook id
+flickr_id: # your flickr id
+github_username: mdakilraihaniftee # your GitHub user name
+gitlab_username: # your GitLab user name
+ieee_id: # your ieeexplore.ieee.org/author/id
+inspirehep_id: # Inspire HEP author ID
+instagram_id: # your instagram id
+kaggle_id: Geeksforkicks # your kaggle id
+keybase_username: # your keybase user name
+lastfm_id: # your lastfm id
+lattes_id: # your ID on Lattes (Brazilian Lattes CV)
+linkedin_username: # your LinkedIn user name
+mastodon_username: # your mastodon instance+username in the format instance.tld/@username
+medium_username: # your Medium username
+orcid_id: # your ORCID ID
+osf_id: # your OSF ID
+pinterest_id: # your pinterest id
+publons_id: # your ID on Publons
+quora_username: # your Quora username
+research_gate_profile: Akil Raihan Iftee # your profile on ResearchGate
+scholar_userid: x1ueJ5UAAAAJ&hl # your Google Scholar ID
+scopus_id: # your profile on Scopus
+semanticscholar_id: # your Semantic Scholar ID
+spotify_id: # your spotify id
+stackoverflow_id: # your stackoverflow id
+telegram_username: # your Telegram user name
+unsplash_id: # your unsplash id
+wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
+whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
+wikidata_id: # your wikidata id
+wikipedia_id: # your wikipedia id (Case sensitive)
+work_url: # work page URL
+x_username: # your X handle
+youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
+zotero_username: # your zotero username
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -154,12 +198,12 @@ collections:
     permalink: /:collection/:title/
 
 announcements:
-  enabled: false
+  enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 
@@ -268,7 +312,7 @@ display_categories: ["external-services"] # these categories will be displayed o
 
 scholar:
   last_name: [Iftee]
-  first_name: [Md., A.]
+  first_name: [Md. Akil Raihan, Md. Akil Raihan ]
 
   style: apa
   locale: en
