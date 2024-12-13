@@ -2,24 +2,24 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: 
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+My name is Md. Akil Raihan Iftee. I am working as a Post-baccalaureate Research Assistant at the [Center for Computational & Data Sciences (CCDS)](https://ccds.ai), Independent University, Bangladesh. 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My research is supervised by [Prof. Dr. Amin Ahsan Ali](http://iub.ac.bd/academics/departments/cse/faculty-and-staff/aminali) and [Prof. Dr. AKM Mahbubur Rahman](http://iub.ac.bd/academics/departments/cse/faculty-and-staff/akmmrahman).. Currently, my research focuses on multi-modal learning, foundation models, test-time domain adaptation, federated learning, and human activity recognition. I am fortunate to collaborate with and receive mentorship from [Md Mofijul Islam](https://mmiakashs.github.io/), [Aman Chadha](https://www.aman.info/)
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Previously, my undergraduate research, supervised by [Sunanda Das](https://scholar.google.com/citations?user=1OPbHxwAAAAJ&hl=en) at KUET, focused on 3D cerebrovascular segmentation using semi-supervised methods. I completed my Bachelor’s from the [Department of Computer Science and Engineering](https://www.kuet.ac.bd/dept/cse), [Khulna University of Engineering & Technology, Khulna](https://www.kuet.ac.bd/), with a CGPA of 3.73.
+
+I am actively seeking research collaborations and Ph.D. opportunities.
