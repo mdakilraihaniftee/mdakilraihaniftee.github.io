@@ -1,14 +1,11 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - mdakilraihaniftee
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - rajibrhasan/FedCTTA
+  - mirsazzathossain/test-time-adaptation
+  - mdakilraihaniftee/Covid-Hack
+  - mdakilraihaniftee/Video-Streaming-Database-management-oracle-
+  - mdakilraihaniftee/Ludo-2.0
