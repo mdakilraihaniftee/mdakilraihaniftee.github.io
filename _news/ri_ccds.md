@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started an internship at the [Center for Computational & Data Sciences]{https://ccds.ai/}
+Started an internship at the [Center for Computational & Data Sciences](https://ccds.ai/)
