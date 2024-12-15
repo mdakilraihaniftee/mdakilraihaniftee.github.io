@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated with a B.Sc. in CSE from [Khulna University of Engineering & Technology]{https://www.kuet.ac.bd/}
+Graduated with a B.Sc. in CSE from [Khulna University of Engineering & Technology](https://www.kuet.ac.bd/)
