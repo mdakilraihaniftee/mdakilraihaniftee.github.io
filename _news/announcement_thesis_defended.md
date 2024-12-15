@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Successfully defended undergraduate thesis under the supervision of [Sk. Imran Hossain]{https://www.kuet.ac.bd/cse/imran}
+Successfully defended undergraduate thesis under the supervision of [Sk. Imran Hossain](https://www.kuet.ac.bd/cse/imran)
