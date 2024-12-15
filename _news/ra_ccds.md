@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have joined as a Research Assistant at [Center for Computational & Data Sciences]{https://ccds.ai/}
+I have joined as a Research Assistant at [Center for Computational & Data Sciences](https://ccds.ai/)
