@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I am excited to share that three of my papers have been accepted for presentation at the 27th International Conference on Computer and Information Technology (ICCIT) 2024.
+I am excited to share that 3 of my papers have been accepted for presentation at the 27th International Conference on Computer and Information Technology (ICCIT) 2024.
