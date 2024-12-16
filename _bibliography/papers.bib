@@ -51,7 +51,6 @@
   html={https://link.springer.com/chapter/10.1007/978-981-99-8937-9_10},
   pdf={Violence_detection.pdf},
   abbr={Published},
-  selected={true},
   preview={vionet_vid.png}
 }
 @inproceedings{iftee2023unsupervised,
@@ -76,7 +75,7 @@
   year={2024},
   publisher={IEEE},
   abstract={Continual Test-Time Adaptation (CTTA) is crucial for de- ploying models in real-world applications with unseen, evolving target domains and restricted access to source data. Existing CTTA methods, however, often rely on source data or prototypes, limiting their applicability in privacy- sensitive and resource-constrained settings. Additionally, these methods suffer from long-term forgetting, which de- grades performance on previously encountered domains as target domains shift. To address these challenges, we pro- pose SloMo-Fast, a source-free, dual-teacher CTTA frame- work designed for enhanced adaptability and generaliza- tion. SloMo-Fast includes two complementary teachers: the Slow-Teacher, which adapts gradually to ensure ro- bust generalization by tracking an exponential moving av- erage of the student’s parameters, and the Fast-Teacher, which quickly adapts to new domains by constructing proto- types from high-confidence test samples, gathering knowl- edge across domains. This efficiently approach preserves knowledge of past domains, adapts efficiently to new ones, and reduces computational complexity by relying solely on batch normalization updates. SloMo-Fast consistently outperforms state-of-the-art methods across CTTA bench- marks, achieving mean error rates of 15.79% on CIFAR10- C, 27.01% on CIFAR100-C, and 54.2% on ImageNet-C. It also demonstrates strong performance on Mixed Domain and our proposed benchmark with cyclic repetition in the continual TTA setting, highlighting its ability to learn gen- eralized representations across domains.},
-  pdf={https://drive.google.com/file/d/1PNsbo2Et7AzTXZQH5ZFUhVvMMK9aFp0X/view},
+  pdf={https://drive.google.com/file/d/1ZqOfTNb33Kgs9NSKmrQyQhW3wF_QfOP2/view},
   abbr={Preprint},
   selected={true},
   preview={slowmo.jpg}
@@ -90,7 +89,7 @@
   year={2024},
   publisher={Springer},
   abstract={Deep learning models often face performance degradation due to distribution shifts between training and testing data. Test-Time Adaptation (TTA) has emerged as a solution, allowing models to adapt dynamically during deployment without access to source data, making it suitable for privacy-sensitive domains. In federated learning scenar- ios, where clients operate on decentralized and heterogeneous data, per- forming TTA is particularly challenging due to the dynamic nature of data distributions and the need for privacy preservation. To address these challenges, we propose Federated Continual Test-Time Adapta- tion (FedCTTA), a new framework using teacher student based knowl- edge distillation that leverages batch normalization (BN) layer updates and similarity-based collaboration among clients to enable efficient and privacy-preserving adaptation. Our approach significantly reduces band- width usage by limiting parameter sharing to BN layers and enhances model accuracy in non-stationary environments through dynamic and collaborative adaptation. Experimental results on benchmark datasets demonstrate that FedCTTA achieves superior performance compared to state-of-the-art methods, particularly in scenarios involving tempo- ral and spatial heterogeneity. This work highlights the potential of com- bining TTA with federated learning to address real-world challenges in privacy-sensitive and dynamic environments.},
-  pdf={https://drive.google.com/file/d/1ZqOfTNb33Kgs9NSKmrQyQhW3wF_QfOP2/view},
+  pdf={https://drive.google.com/file/d/1PNsbo2Et7AzTXZQH5ZFUhVvMMK9aFp0X/view},
   abbr={Preprint},
   preview={fedctta.jpg}
 }
