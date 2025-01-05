@@ -5,7 +5,7 @@ date: 2024-01-05 11:30:00
 description: 
 tags: 
 categories: paper-review
-thumbnail: assets/img/paper_review/naturalspeech3/1.png
+thumbnail: assets/img/paper_review/1.png
 images:
   compare: false
   slider: true
