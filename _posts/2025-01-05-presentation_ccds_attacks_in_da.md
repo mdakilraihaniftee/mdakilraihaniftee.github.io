@@ -13,8 +13,10 @@ images:
 
 **Review of the Paper: Uncovering Adversarial Risks of Test-Time Adaptation**  
 **Paper Link:** [arXiv:2301.12576]([https://arxiv.org/abs/2403.03100](https://arxiv.org/pdf/2301.12576))
+
 **Review of the Paper: MedBN: Robust Test-Time Adaptation against Malicious Test Samples**  
 **Paper Link:** [arXiv:2403.19326]([https://arxiv.org/abs/2403.03100](https://arxiv.org/pdf/2403.19326))
+
 **Review of the Paper: R.I.P. : A Simple Black-box Attack on Continual Test-time Adaptation**  
 **Paper Link:** [arXiv:2412.01154]([https://arxiv.org/abs/2403.03100](https://arxiv.org/pdf/2412.01154))
 
