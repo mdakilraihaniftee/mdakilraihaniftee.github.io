@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Paper Review - Different Losses of Test Time Adaptation Methods"
+title: "Personal Blog: Different Losses of Test Time Adaptation Methods"
 date: 2024-01-17 11:30:00
 description: 
 tags: 
-categories: paper-review
+categories: blog-review
 thumbnail: assets/img/paper_review/2.png
 images:
   compare: false
