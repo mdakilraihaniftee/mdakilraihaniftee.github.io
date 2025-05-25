@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I am excited to share that 3 of my papers have been accepted for presentation at the 27th International Conference on Computer and Information Technology (ICCIT) 2024.
+Two of our papers [BD Open LULC Map](https://mirsazzathossain.me/files/bd-lulc.pdf) and [RGC-BENT](https://mirsazzathossain.me/files/rgc.pdf) have been accepted in IEEE International Conference on Image Processing, 2025.
