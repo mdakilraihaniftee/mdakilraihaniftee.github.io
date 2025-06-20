@@ -2,7 +2,7 @@
 layout: page
 title: Gaze-Enhanced Multimodal Interaction
 description: Multimodal Learning
-img: assets/img/proj32.jpg
+img: assets/img/proj32.png
 redirect: https://drive.google.com/file/d/1F73JF1ToH_yrs_Lebhw7N1Yei5bNKagA/view?usp=sharing
 importance: 3
 category: Research Proposal

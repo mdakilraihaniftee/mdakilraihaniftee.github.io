@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Human Activity Recognition
-description: Multimodal Learning
-img: assets/img/proj10.jpg
+description: Multimodal Alignment (Video, Sensor, Language)
+img: assets/img/proj10.png
 importance: 1
 category: Ongoing Research
 ---

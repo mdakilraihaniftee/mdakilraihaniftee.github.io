@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Federated Personalized Eye Scanpath
-description: Federated Learning
-img: assets/img/proj31.jpg
+description: Federated Learning + Trustworthy ML
+img: assets/img/proj31.png
 redirect: https://drive.google.com/file/d/1qX_SYydiIAesP3kR8dzgn5mOhknuGpY9/view?usp=sharing
 importance: 3
 category: Research Proposal

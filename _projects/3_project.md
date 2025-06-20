@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Controllable 3D User Interface
-description: Multimodal Learning
-img: assets/img/proj30.jpg
+title: Controllable 3D User Interface Generation 
+description: Multimodal Learning, 3D, Generative AI
+img: assets/img/proj30.png
 redirect: https://drive.google.com/file/d/1u_gDGtGEwFdGqUq6sycXmIHNyfRHdLl1/view?usp=sharing
 importance: 3
 category: Research Proposal
