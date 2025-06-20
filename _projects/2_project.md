@@ -1,16 +1,32 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
+title: Federated Personalized Scanpath
+description: Federated Learning
 img: assets/img/3.jpg
 importance: 2
-category: work
+category: Development Projects
 giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Eye Scanpaths Are Unique to Individuals, for instance,
+Novices scan more; experts jump directly to relevant
+areas. Personalized scanpaths help Prioritize content in
+areas of predicted attention.
+
+Gaze Data is Highly Sensitive and Privacy-Critical as
+Eye movements can reveal User identity (biometric pat-
+terns), Cognitive states (confusion, interest, fatigue),
+User intent (what they focus on).
+
+In traditional training, multiple users’ raw gaze data
+would have to be directly shared together to the trainer
+model. This exposes different user’s data to the trainer.
+
+• Legal & Ethical Constraints:
+Regulations like GDPR and HIPAA discourage
+or ban collection of personally identifiable data like
+gaze traces unless explicitly consented, which is hard to
+enforce at scale.
 
 To give your project a background in the portfolio page, just add the img tag to the front matter like so:
 

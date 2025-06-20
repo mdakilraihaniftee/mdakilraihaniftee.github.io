@@ -49,7 +49,7 @@
 
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}#education">
+            <a class="nav-link" href="{{ '/' | relative_url }}">
               {{- about_title }}
               {% if page.permalink == '/' %}
                 <span class="sr-only">(current)</span>
@@ -57,29 +57,28 @@
             </a>
           </li>
 
+          
           <!-- Education -->
-          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
+          <li class="nav-item">
             <a class="nav-link" href="{{ '/' | relative_url }}#education">
               Education
-              {% if page.permalink == '/' %}
-                <span class="sr-only">(current)</span>
-              {% endif %}
             </a>
           </li>
 
-          <!-- Work & Research Experience -->
+          <!-- Experience -->
           <li class="nav-item">
             <a class="nav-link" href="{{ '/' | relative_url }}#workexperience">
-              Work & Research Experience
+              Experience
             </a>
           </li>
 
-          <!-- Honors and Awards -->
+          <!-- Achievements -->
           <li class="nav-item">
             <a class="nav-link" href="{{ '/' | relative_url }}#honowards">
-              Honors and Awards
+              Achievements
             </a>
           </li>
+
 
 
 

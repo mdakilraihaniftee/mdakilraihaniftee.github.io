@@ -1,81 +1,68 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: Human Activity Recognition
+description: Multimodal Learning
+img: assets/img/proj10.jpg
 importance: 1
-category: work
-related_publications: true
+category: Ongoing Research
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm-10 mt-3 mt-md-0">
+    <p>
+      <strong>Context-Aware Cross-Modal Alignment for Human Activity Recognition</strong> presents a novel multimodal framework for recognizing human activities in complex environments using both visual and wearable sensor data. 
+      The system integrates:
+    </p>
+    <ul>
+      <li><strong>Video-LLaVA:</strong> A vision-language model with context prompts for semantic video understanding</li>
+      <li><strong>Sensor Features:</strong> Fine-grained motion data from accelerometer, gyroscope, and orientation sensors</li>
+      <li><strong>Keyless Attention:</strong> Efficient cross-modal alignment without key-query structures</li>
+      <li><strong>Contrastive Learning:</strong> Semantic alignment between modalities using InfoNCE loss</li>
+    </ul>
+    <p>
+      We evaluate on the <strong>MMAct</strong> dataset (27 activities in crowded scenes), demonstrating superior performance over traditional unimodal and fusion baselines. This project combines the semantic richness of large video-language models with the precision of sensor signals to deliver robust human activity understanding.
+    </p>
+    <p><strong>📄 Project Paper:</strong> <a href="/assets/pdf/har_mmact_.pdf" target="_blank">Download PDF</a></p>
   </div>
 </div>
-```
 
-{% endraw %}
+<div class="row justify-content-sm-center">
+  <div class="col-sm-10 mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/proj10.png" title="Proposed HAR Framework" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+
+<div class="caption text-center">
+  Overview of the proposed Human Activity Recognition pipeline using multimodal alignment and contrastive learning.
+</div>
+
+<div class="row justify-content-sm-center">
+  <div class="col-sm-10 mt-3 mt-md-0">
+    <p>
+      The framework follows a four-stage process:
+    </p>
+    <ol>
+      <li><strong>Feature Extraction:</strong> Video-LLaVA for contextual video embeddings, and 1D CNNs for sensor signals.</li>
+      <li><strong>Cross-Modal Alignment:</strong> Keyless attention mechanism computes attention weights over sensor embeddings using video context.</li>
+      <li><strong>Joint Fusion & Classification:</strong> Fused representation is passed through a Transformer and MLP for activity classification.</li>
+      <li><strong>Loss Optimization:</strong> Combines cross-entropy loss with multimodal contrastive loss for enhanced alignment and generalization.</li>
+    </ol>
+  </div>
+</div>
+
+
+
+<div class="caption text-center">
+  The training objective combines classification loss and contrastive alignment loss to refine the multimodal representation space.
+</div>
+
+
+## 🔖 References
+
+1. J. Gao et al., “Video-LLaVA: Large Language and Vision Assistant for Video Understanding,” *arXiv:2308.01377*, 2023.
+2. Y. Wang et al., “MMAct: A Large-Scale Multi-Modal Dataset for Human Activity Understanding in Crowded Scenarios,” *ICCV*, 2021.
+3. X. Chen et al., “Multimodal Sensor Fusion for Human Activity Recognition with Deep Learning,” *IEEE Sensors Journal*, vol. 20, no. 18, pp. 10894–10903, 2020.
+4. A. Vaswani et al., “Attention Is All You Need,” *NeurIPS*, 2017.
+5. M.-T. Luong et al., “Effective Approaches to Attention-Based Neural Machine Translation,” *arXiv:1508.04025*, 2015.
+
+---

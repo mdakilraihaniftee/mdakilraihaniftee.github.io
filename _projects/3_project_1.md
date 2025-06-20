@@ -1,25 +1,32 @@
 ---
 layout: page
-title: Controllable 3D User Interface
-description: Multimodal Learning
-img: assets/img/proj30.jpg
-redirect: https://drive.google.com/file/d/1u_gDGtGEwFdGqUq6sycXmIHNyfRHdLl1/view?usp=sharing
+title: Federated Personalized Eye Scanpath
+description: Federated Learning
+img: assets/img/proj31.jpg
+redirect: https://drive.google.com/file/d/1qX_SYydiIAesP3kR8dzgn5mOhknuGpY9/view?usp=sharing
 importance: 3
 category: Research Proposal
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Eye Scanpaths Are Unique to Individuals, for instance,
+Novices scan more; experts jump directly to relevant
+areas. Personalized scanpaths help Prioritize content in
+areas of predicted attention.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Gaze Data is Highly Sensitive and Privacy-Critical as
+Eye movements can reveal User identity (biometric pat-
+terns), Cognitive states (confusion, interest, fatigue),
+User intent (what they focus on).
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+In traditional training, multiple users’ raw gaze data
+would have to be directly shared together to the trainer
+model. This exposes different user’s data to the trainer.
+
+• Legal & Ethical Constraints:
+Regulations like GDPR and HIPAA discourage
+or ban collection of personally identifiable data like
+gaze traces unless explicitly consented, which is hard to
+enforce at scale.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
