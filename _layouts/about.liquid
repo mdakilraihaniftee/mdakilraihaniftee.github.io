@@ -40,34 +40,354 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
     <br><br>
-    <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
-    <br><br><br>
+  
 
-    <!-- Latest posts -->
-    {% if site.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
 
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
-    <br><br><br>
+<!-- News with vertical scroll -->
+{% if page.news and site.announcements.enabled %}
+  <h2>
+    <a href="{{ '/news/' | relative_url }}" style="color: inherit"><b>News</b></a>
+  </h2>
+
+  <div class="news-scroll-wrapper">
+    {% include news.liquid %}
+  </div>
+
+  <style>
+    .news-scroll-wrapper {
+      max-height: 200px; /* Approx height to show 5 news items */
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      scrollbar-width: thin;
+    }
+
+    .news-scroll-wrapper::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .news-scroll-wrapper::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .news-scroll-wrapper::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+      border-radius: 3px;
+    }
+  </style>
+{% endif %}
+<br><br><br>
+
+
+
+
+
+<!-- Latest posts with vertical scroll -->
+{% if site.latest_posts.enabled %}
+  <h2>
+    <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
+  </h2>
+
+  <div class="latest-posts-scroll-wrapper">
+    {% include latest_posts.liquid %}
+  </div>
+
+  <style>
+    .latest-posts-scroll-wrapper {
+      max-height: 600px; /* adjust based on post item height × 5 */
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      scrollbar-width: thin;
+    }
+
+    .latest-posts-scroll-wrapper::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .latest-posts-scroll-wrapper::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .latest-posts-scroll-wrapper::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+      border-radius: 3px;
+    }
+  </style>
+{% endif %}
+
+
+
+
+
+
+
+<!-- Ongoing Research Projects - Horizontal Scroll -->
+{% assign ongoing_projects = site.projects | where: "category", "Ongoing Research" | sort: "importance" %}
+{% if ongoing_projects.size > 0 %}
+  <h2>
+    <a href="{{ '/projects/' | relative_url }}#Ongoing Research" style="color: inherit"><b>Ongoing Research Projects</b></a>
+  </h2>
+
+  <div class="scroll-container-wrapper">
+    <button class="scroll-btn left" onclick="scrollProjects('left')">&#8249;</button>
+
+    <div id="scroll-projects" class="scroll-container">
+      {% for project in ongoing_projects %}
+        <div class="scroll-card">
+          <div class="card-content">
+            {% include projects.liquid project=project %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <button class="scroll-btn right" onclick="scrollProjects('right')">&#8250;</button>
+  </div>
+
+  <style>
+    .scroll-container-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-card {
+      flex: 0 0 auto;
+      width: 30%;
+      min-width: 300px;
+      max-width: 320px;
+      height: 350px; /* fixed height */
+      display: flex;
+      flex-direction: column;
+      background: white;
+    }
+
+    .card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .scroll-card .project-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .scroll-btn {
+      background-color: #eee;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .scroll-btn.left {
+      margin-right: 0.5rem;
+    }
+
+    .scroll-btn.right {
+      margin-left: 0.5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .scroll-card {
+        width: 80%;
+        height: 420px;
+      }
+    }
+  </style>
+
+  <script>
+    function scrollProjects(direction) {
+      const container = document.getElementById('scroll-projects');
+      const scrollAmount = container.clientWidth * 0.9;
+      container.scrollBy({ left: direction === 'right' ? scrollAmount : -scrollAmount });
+    }
+  </script>
+
+  <br><br><br>
+{% endif %}
+
+
+
+
+
+
+
+<!-- Selected papers with vertical scroll -->
+{% if page.selected_papers %}
+  <h2>
+    <a href="{{ '/publications/' | relative_url }}" style="color: inherit"><b>Selected Publications</b></a>
+  </h2>
+
+  <div class="selected-papers-scroll-wrapper">
+    {% include selected_papers.liquid %}
+  </div>
+
+  <style>
+    .selected-papers-scroll-wrapper {
+      max-height: 1500px; /* Adjust this height as needed */
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      scrollbar-width: thin;
+    }
+
+    .selected-papers-scroll-wrapper::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .selected-papers-scroll-wrapper::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .selected-papers-scroll-wrapper::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+      border-radius: 3px;
+    }
+  </style>
+{% endif %}
+<br><br><br>
+
+
+
+
+
+
+
+
+<!-- Research Proposals - Horizontal Scroll -->
+{% assign ongoing_projects = site.projects | where: "category", "Research Proposal" | sort: "importance" %}
+{% if ongoing_projects.size > 0 %}
+  <h2>
+    <a href="{{ '/projects/' | relative_url }}#Research Proposal" style="color: inherit"><b>Research Proposals</b></a>
+  </h2>
+
+  <div class="scroll-container-wrapper">
+    <button class="scroll-btn left" onclick="scrollProjects('left')">&#8249;</button>
+
+    <div id="scroll-projects" class="scroll-container">
+      {% for project in ongoing_projects %}
+        <div class="scroll-card">
+          <div class="card-content">
+            {% include projects.liquid project=project %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <button class="scroll-btn right" onclick="scrollProjects('right')">&#8250;</button>
+  </div>
+
+  <style>
+    .scroll-container-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-card {
+      flex: 0 0 auto;
+      width: 30%;
+      min-width: 300px;
+      max-width: 320px;
+      height: 350px; /* fixed height */
+      display: flex;
+      flex-direction: column;
+      background: white;
+    }
+
+    .card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .scroll-card .project-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .scroll-btn {
+      background-color: #eee;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .scroll-btn.left {
+      margin-right: 0.5rem;
+    }
+
+    .scroll-btn.right {
+      margin-left: 0.5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .scroll-card {
+        width: 80%;
+        height: 420px;
+      }
+    }
+  </style>
+
+  <script>
+    function scrollProjects(direction) {
+      const container = document.getElementById('scroll-projects');
+      const scrollAmount = container.clientWidth * 0.9;
+      container.scrollBy({ left: direction === 'right' ? scrollAmount : -scrollAmount });
+    }
+  </script>
+
+  <br><br><br>
+{% endif %}
+
 
     <!-- Education -->
-    <h2 id="education">Education</h2>
+    <h2 id="education"><b>Education</b></h2>
     <ul>
     
       <li><strong>Bachelor of Science in Computer Science and Engineering (BSc. Engg.)</strong> <span style="color:green;">[2019–2024]</span><br>
@@ -86,7 +406,7 @@ layout: default
     <br><br><br>
     
     <!-- Work & Research Experience -->
-    <h2 id="workexperience">Work & Research Experience</h2>
+    <h2 id="workexperience"><b>Work & Research Experience</b></h2>
     
     <h3>Research Experience</h3>
     <ul>
@@ -116,7 +436,7 @@ layout: default
     <br><br><br>
 
     <!-- Honors and Awards -->
-    <h2 id="honowards">Honors and Awards</h2>
+    <h2 id="honowards"><b>Honors and Awards</b></h2>
     <p>I've been fortunate to receive recognition for my academic excellence and co-curricular achievements over the years.</p>
     <ul>
       <li><strong>Assisted Reviewer – IJCNN 2025 & IEEE Access Journal:</strong> Contributed to the peer-review process of a top-tier conference and a reputed journal. <span style="color:green;">[2025]</span></li><br>
