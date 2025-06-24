@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Human Activity Recognition
-description: Multimodal Alignment (Video, Sensor, Language)
+title: Human Activity Recognition through Wearable Sensor, Video
+description: Multimodal Alignment from Video, Sensor(accelerometer, gyroscope, and orientation), Language
 img: assets/img/proj10.png
 importance: 1
 category: Ongoing Research
