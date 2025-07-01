@@ -118,7 +118,7 @@ layout: default
 
 
 
-
+{% comment %}
 
 <!-- Ongoing Research Projects - Horizontal Scroll -->
 {% assign ongoing_projects = site.projects | where: "category", "Ongoing Research" | sort: "importance" %}
@@ -229,7 +229,7 @@ layout: default
   <br><br><br>
 {% endif %}
 
-
+{% endcomment %}
 
 
 
@@ -271,10 +271,263 @@ layout: default
 
 
 
+<!-- Research Areas with independent scroll for each category -->
+<h2 id="ResearchAreas">
+  <a href="#ResearchAreas" style="color: inherit"><b>Research Areas</b></a>
+</h2>
+
+<div class="research-areas-wrapper">
+  <!-- Multimodal Learning -->
+  <div class="research-category">
+    <h4><b>Multimodal Learning:</b></h4>
+    <div class="category-scroll">
+      <ol>
+        <li>
+          <img src="/assets/img/proj10.png" class="zoomable area-icon" onclick="openZoom(this)">
+          <div>
+            <a href="/assets/pdf/har_mmact_.pdf">Context-Aware Cross-Modal Alignment for HAR Using LLMs and Wearable Sensors</a>
+            <p class="project-desc">A multimodal (video, language, sensor modality) model where video features are obtained from a context prompt guided Video-LLava, and applied Keyless Attention for sensor feature fusion.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Generative AI -->
+  <div class="research-category">
+    <h4><b>Generative AI:</b></h4>
+    <div class="category-scroll">
+      <ol>
+        <li>
+          <img src="/assets/img/proj11.png" class="zoomable area-icon" onclick="openZoom(this)">
+          <div>
+            <a href="/projects/1_project_2/">Diffusion-Based Image Editing with Vision-Language Instructions (pdf)</a>
+            <p class="project-desc">An Image Editing Tool with User Instructions had: language processor (LLAVA), segmenter (SAM), and image editor (Stable Diffusion)</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Trustworthy ML -->
+  <div class="research-category">
+    <h4><b>Trustworthy ML, Security & Privacy:</b></h4>
+    <div class="category-scroll">
+      <ol>
+        <li>
+          <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
+          <div>
+            <a href="/projects/1_project_3/">Semantic Cognitive Distraction Attack (SCD) in LLM (pdf)</a>
+            <p class="project-desc">Demonstrates how subtle, semantically confusing inputs can degrade LLM outputs in safety-critical applications.</p>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
+          <div>
+            <a href="#">Gradient Inversion Attack in Test Time Adaptation (pdf)</a>
+            <p class="project-desc">Investigates privacy vulnerabilities during model adaptation by recovering input data from gradient signals.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
 
 
 
+  <!-- Federated Learning -->
+  <div class="research-category">
+    <h4><b>Federated Learning:</b></h4>
+    <div class="category-scroll">
+      <ol>
+        <li>
+          <img src="/assets/img/pr.png" class="zoomable area-icon" onclick="openZoom(this)">
+          <div>
+            <a href="/assets/pdf/missing_mod_fed.pdf">When a Modality is Missing: A Cross-Modal Recovery for Federated Multimodal LLM Models (pdf)</a>
+            <p class="project-desc">Introduces a modality recovery approach for clients missing either image or text in federated multimodal learning.</p>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/fedbalancett.png" class="zoomable area-icon" onclick="openZoom(this)">
+          <div>
+            <a href="/assets/pdf/fedbalancetta.pdf">FedBalanceTTA – Federated Learning with Balanced Test Time Adaptation (pdf)</a>
+            <p class="project-desc">Combines test-time adaptation with federated learning to balance performance across domains and clients.</p>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/proj31.png" class="zoomable area-icon" onclick="openZoom(this)">
+          <div>
+            <a href="/assets/pdf/proj31.pdf">Federated Personalized Scanpath Prediction for Privacy-Preserving UI Optimization (pdf)</a>
+            <p class="project-desc">Proposes personalized scanpath learning to optimize user interfaces while preserving eye-tracking privacy.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
 
+  <!-- HCI -->
+  <div class="research-category">
+    <h4><b>Human Computer Interaction:</b></h4>
+    <div class="category-scroll">
+      <ol>
+        <li>
+          <img src="/assets/img/proj32.png" class="zoomable area-icon" onclick="openZoom(this)">
+          <div>
+            <a href="/assets/pdf/proj32.pdf">Voice Activated Gaze-Enhanced Multimodal Interaction for Accessibility (pdf)</a>
+            <p class="project-desc">Combines voice and gaze input to support accessible multimodal interaction for users with limited mobility.</p>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/proj30.png" class="zoomable area-icon" onclick="openZoom(this)">
+          <div>
+            <a href="/assets/pdf/proj30.pdf">Controllable 3D UI Exploration and its Future (pdf)</a>
+            <p class="project-desc">Explores new paradigms for interacting with 3D user interfaces, focusing on control and user experience.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+
+  <!-- IoT -->
+  <div class="research-category">
+    <h4><b>IoT, Embedded System, Wearable/ Wearless Sensor:</b></h4>
+    <div class="category-scroll">
+      <ol>
+        <li>
+          <img src="/assets/img/proj10.png" class="zoomable area-icon" onclick="openZoom(this)">
+          <div>
+            <a href="/assets/pdf/har_mmact_.pdf">Wearable Sensor Feature Alignment (Accelerometer, Gyro, Orientation) for Human Activity Recognition (pdf)</a>
+            <p class="project-desc">Aligns sensor features using projection techniques to enhance HAR in low-resource or noisy environments.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+
+<!-- Zoom Modal -->
+<div id="imgModal" class="modal" onclick="this.style.display='none'">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="imgZoomTarget">
+</div>
+
+<style>
+  .research-areas-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .research-category {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fafafa;
+  }
+
+  .category-scroll {
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    scrollbar-width: thin;
+  }
+
+  .category-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .category-scroll::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 3px;
+  }
+
+  .project-desc {
+  margin: 0.3rem 0 0.6rem 0;
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.4;
+  }
+
+
+  .research-category ol {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+
+  .research-category li {
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .research-category a {
+    text-decoration: none;
+    color: #0074cc;
+  }
+
+  .research-category a:hover {
+    text-decoration: underline;
+  }
+
+  .area-icon {
+    width: 95px;
+    height: 72px;
+    object-fit: contain;
+    cursor: zoom-in;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    animation: zoomIn 0.3s ease;
+  }
+
+  @keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0 }
+    to { transform: scale(1); opacity: 1 }
+  }
+
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  function openZoom(img) {
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("imgZoomTarget");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+  }
+</script>
+<br><br><br>
+
+
+
+{% comment %}
 
 <!-- Research Proposals - Horizontal Scroll -->
 {% assign ongoing_projects = site.projects | where: "category", "Research Proposal" | sort: "importance" %}
@@ -380,11 +633,11 @@ layout: default
       const scrollAmount = container.clientWidth * 0.9;
       container.scrollBy({ left: direction === 'right' ? scrollAmount : -scrollAmount });
     }
-  </script>
+  </script> 
 
   <br><br><br>
-{% endif %}
-
+{% endif %} 
+{% endcomment %}
 
     <!-- Education -->
     <h2 id="education"><b>Education</b></h2>
@@ -399,8 +652,8 @@ layout: default
       New Govt Degree College, Rajshahi, Bangladesh<br>
       GPA: 5.00 / 5.00</li><br>
     
-      <li><strong>Secondary School Certificate (SSC)</strong> <span style="color:green;">[2008–2016]</span><br>
-      Rajshahi Collegiate School, Rajshahi, Bangladesh<br>
+      <li><strong>Secondary School Certificate (SSC)</strong> <span style="color:green;">[2011–2016]</span><br>
+      R.B Govt. High School, Joypurhat Bangladesh<br>
       GPA: 5.00 / 5.00</li>
     </ul>
     <br><br><br>
