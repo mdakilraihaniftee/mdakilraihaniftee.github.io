@@ -25,7 +25,7 @@ nav_order: 6
 
 - **CSE-200 Tutorial**  
   *Computer Programming II*  
-  [Slide link](#)
+  [Slide link](https://docs.google.com/presentation/d/1f1HGqSCe5qYzeGy6DYcjpW5H68nJPPNzdBvnG_22QzI/edit?usp=sharing)
 
 - **CSE-203**  
   *Data Structure*  
