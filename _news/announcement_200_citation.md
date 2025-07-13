@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Reaching 200 Citations of my research papers. Check in my [Google Scholar](https://scholar.google.com/citations?user=x1ueJ5UAAAAJ&hl=en&oi=ao).
+Reaching 200+ Citations of my research papers. Check in my [Google Scholar](https://scholar.google.com/citations?user=x1ueJ5UAAAAJ&hl=en&oi=ao).
