@@ -22,8 +22,8 @@ nav_order: 6
 - **CSE-100 Tutorial**  
   *Computer Programming*  
   [Slide link](https://docs.google.com/presentation/d/1Znt_QzEY2B3D8Z_mXD9G3NRRoyFWoVnTMvhh054HPAc/edit?usp=sharing)
-
-     [Slide 2 link](https://docs.google.com/presentation/d/1yzLId1s0juY8SeAd8ivQAn_kDC-OPCooKmPptMDfG1Q/edit?usp=sharing)
+  
+  [Slide 2 link](https://docs.google.com/presentation/d/1yzLId1s0juY8SeAd8ivQAn_kDC-OPCooKmPptMDfG1Q/edit?usp=sharing)
 
 - **CSE-200 Tutorial**  
   *Computer Programming II*  
