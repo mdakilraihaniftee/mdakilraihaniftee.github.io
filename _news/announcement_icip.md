@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Two of our papers [BD Open LULC Map](https://mirsazzathossain.me/files/bd-lulc.pdf) and [RGC-BENT](https://mirsazzathossain.me/files/rgc.pdf) have been accepted in IEEE International Conference on Image Processing ([ICIP-2025](https://2025.ieeeicip.org/)).
+Two of our papers [BD Open LULC Map](https://arxiv.org/abs/2505.21915) and [RGC-BENT](https://arxiv.org/pdf/2505.19249) have been accepted in IEEE International Conference on Image Processing ([ICIP-2025](https://2025.ieeeicip.org/)).
