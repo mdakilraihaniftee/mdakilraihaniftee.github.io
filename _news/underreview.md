@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our [SloMo-Fast](https://mdakilraihaniftee.github.io/assets/pdf/slomofast.pdf) and [FedBalanceTTA](https://mdakilraihaniftee.github.io/assets/pdf/fedbalancetta.pdf) are avialable in online. Please have a look at the papers.
+Our [SloMo-Fast](https://mdakilraihaniftee.github.io/assets/pdf/slomofast.pdf) and [pFedBBN](https://mdakilraihaniftee.github.io/assets/pdf/fedbalancetta.pdf) are avialable in online. Please have a look at the papers.
