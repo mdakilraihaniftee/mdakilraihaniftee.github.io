@@ -78,7 +78,6 @@
   abstract={Continual learning enables vision-language models to incrementally acquire new knowledge without relying on access to the entire historical dataset. This capability is crucial for adapting to evolving data distributions in real-world scenar- ios, where models must handle domain shifts and incorporate new information while retaining previously learned knowledge. However, maintaining performance in large-scale models remains challenging due to parameter shifts during learning and the sig- nificant computational costs associated with full-model updates. To address these challenges, this paper introduces a novel method for Continual Test-Time Domain Adaptation (CTTDA) on vision- language datasets, leveraging a MoE and adapter modules to optimize domain-specific adaptation while maintaining zero-shot classification capabilities. Utilising LoRA in MoE framework within transformer layers, the model efficiently updates a small set of parameters by dynamically selecting experts. This approach minimizes computational costs by activating only a portion of the model, avoiding the need for full-model updates during domain adaptation. During test-time adaptation, entropy loss is calculated without access to labels, improving the model’s fine-tuning and guiding towards confident predictions across domains. A contrastive warm-up phase further optimizes the adapter blocks by enhancing the differentiation of domain-specific and domain- invariant features, thereby establishing a strong foundation for effective test-time adaptation. The proposed MoE-TTA model achieves an average accuracy of 36.43% across diverse ImageNet datasets and 32.93% in fine-grained classification, demonstrating promising results, especially in datasets like EuroSAT (51.67%), while being lower than several competitors, with no doubt in its ability to capture domain shifts effectively.},
   html={https://ieeexplore.ieee.org/abstract/document/11022003},
   pdf={https://mdakilraihaniftee.github.io/assets/pdf/moe-tta.pdf},
-  selected={true},
   abbr={Published},
   preview={moe.jpg}
 }
@@ -93,7 +92,6 @@
   abstract={Medical image segmentation plays a vital role in diagnostic and treatment planning, where precision is crucial for accurate outcomes. Traditional segmentation methods, while effective in many areas, often fail to incorporate user-driven guidance, leading to errors in region identification, especially when irrelevant regions are segmented. In this study, we present a new, instruction-based medical image segmentation framework that enhances user interaction while delivering precise and context-aware results. Our approach addresses the limitations of previous works, such as vision-large language models (LLM) like LLaVA, which provide context but do not perform segmentation, and the Segment Anything Model, which performs segmenta- tion but does not incorporate user’s text-guided instruction. We propose a segmentation model framework that combines vision-language embeddings from LLava with SAM to perform accurate, query-based segmentation of medical images. A key innovation of our model framework is its ability to handle false premises—situations where a user queries for an organ not present in the image—by employing a similarity-based mechanism that prevents incorrect segmentation. Tested on MRI datasets, FLARE22, our system achieves the highest segmentation dice coefficient 63.9%, with significantly improved relevance and reliability. The results demonstrate the effectiveness of our approach in refining segmentation quality and enhancing user- guided interaction, thus offering an advanced tool for medical imaging applications.},
   html={https://ieeexplore.ieee.org/abstract/document/11022489},
   pdf={https://mdakilraihaniftee.github.io/assets/pdf/organ-seg.pdf},
-  selected={true},
   abbr={Published},
   preview={llavaseg.jpg}
 }
@@ -127,16 +125,16 @@
   preview={slowmo.jpg}
 }
 
-@article{iftee2025fedbalance,
-  title={FedBalanceTTA – Federated Learning with Balanced Test Time Adaptation},
+@article{iftee2025pfedbbn,
+  title={pFedBBN: A Personalized Federated Test-Time Adaptation with Balanced Batch Normalization for Class-Imbalanced Data},
   author={Md Akil Raihan Iftee, Syed Md. Ahnaf Hasan, Mir Sazzat Hossain, Rakibul Hasan Rajib, Amin Ahsan Ali, AKM Mahbubur Rahman, Sajib Mistry, Monowar Bhuyan},
-  booktitle={Under Review AAAI-2026},
+  booktitle={Under Review ICLR-2026},
   pages={},
   year={2025},
   publisher={IEEE},
   abstract={Federated learning (FL) enables collaborative model training across decentralized clients while preserving the privacy of local data. Class imbalance remains a fundamental challenge in FL, where rare but critical classes are often severely underrepresented in individual client datasets. Although prior work has addressed class imbalance during training through reliable aggregation and local class distribution alignment, these methods typically rely on access to labeled data or coordination among clients, and none are designed for unsupervised adaptation during inference under federated constraints. We propose a new approach called pFedBBN, a personalized federated test-time adaptation framework that incorporates balanced batch normalization (BBN) to mitigate prediction bias by treating all classes equally during feature normalization, while also enabling a weighted collaboration of clients based on their BBN statistics, which indicates that clients from similar domains prioritize each other more during adaptation. The method supports fully unsupervised local adaptation and introduces a class-aware model aggregation strategy that enables personalized inference without compromising privacy. It effectively addresses both distribution shifts and class imbalance through balanced feature normalization and domain-aware collaboration, without requiring any labeled or raw data from clients. Experiments on corrupted versions of CIFAR-10 and CIFAR-100 demonstrate that pFedBBN significantly improves robustness and performance on minority classes compared to existing federated and test-time adaptation baselines.},
-  html={https://mdakilraihaniftee.github.io/assets/pdf/fedbalancetta.pdf},
-  pdf={fedbalancetta.pdf},
+  html={https://drive.google.com/file/d/19IwL73UUH9O9aSI1rPGhJGq6p7ve1jkO/view},
+  pdf={https://drive.google.com/file/d/19IwL73UUH9O9aSI1rPGhJGq6p7ve1jkO/view},
   abbr={Preprint},
   selected={true},
   preview={fedbalancetta.png}
