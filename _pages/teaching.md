@@ -36,7 +36,7 @@ nav_order: 6
   [Slide 4 link](https://docs.google.com/presentation/d/1Fo5qBTaD6jLCwSdhubBd8w0msD_r-c_FOK-eqJRILs4/edit?usp=drivesdk)
 
 
-- **CSE-203**  
+- **CSE-203 Tutorial**  
   *Data Structure*  
   [Slide 1 link](https://docs.google.com/presentation/d/1n4HkTZ9GbmmfyY5fYQty--YtbyfZ3x5hS8jVOBMvEV8/edit?usp=sharing)
 
