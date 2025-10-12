@@ -40,6 +40,9 @@ nav_order: 6
   *Data Structure*  
   [Slide 1 link](https://docs.google.com/presentation/d/1n4HkTZ9GbmmfyY5fYQty--YtbyfZ3x5hS8jVOBMvEV8/edit?usp=sharing)
 
+  [Slide 2 link](https://docs.google.com/presentation/d/1IXNuqf55ctqRL3-RjHqezHxaAuNCeDQAiId5h1jxaEw/edit?usp=sharing)
+
+
 ---
 
 More updates and course materials coming soon!
