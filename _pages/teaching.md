@@ -25,6 +25,9 @@ nav_order: 6
   
   [Slide 2 link](https://docs.google.com/presentation/d/1yzLId1s0juY8SeAd8ivQAn_kDC-OPCooKmPptMDfG1Q/edit?usp=sharing)
 
+  [Slide 3 link](https://docs.google.com/presentation/d/15qG6if-i9HdLV5gGyFfAkre8E31fftqdS9l9dXsVaAo/edit?usp=sharing)
+
+
 - **CSE-200 Tutorial**  
   *Computer Programming II*  
   [Slide 1 link](https://docs.google.com/presentation/d/1f1HGqSCe5qYzeGy6DYcjpW5H68nJPPNzdBvnG_22QzI/edit?usp=sharing) 
@@ -34,6 +37,10 @@ nav_order: 6
   [Slide 3 link](https://docs.google.com/presentation/d/1cZXR7NpX4Oxw_rEpnY-JsEXNrgtukhMcG98LHw7wjE4/edit?usp=drivesdk)
 
   [Slide 4 link](https://docs.google.com/presentation/d/1Fo5qBTaD6jLCwSdhubBd8w0msD_r-c_FOK-eqJRILs4/edit?usp=drivesdk)
+
+  [Slide 5 link](https://docs.google.com/presentation/d/1_OshTR5qOyFqwIh50Rpl_gDOlGsbLDsOwt_z3hAjTOM/edit?usp=sharing)
+
+  [Slide 6 link](https://docs.google.com/presentation/d/1WMSBt0_Bu2GNiQhygm982moznLV5VrMxwf5VjzsZHcs/edit?usp=sharing)
 
 
 - **CSE-203 Tutorial**  
