@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our [SloMo-Fast](https://arxiv.org/pdf/2511.18468), [FedPoisonTTP](https://arxiv.org/pdf/2511.19248) and [pFedBBN](https://arxiv.org/pdf/2511.18066) are avialable in online. Please have a look at the papers.
+Our [SloMo-Fast](https://arxiv.org/pdf/2511.18468), [FedPoisonTTP](https://arxiv.org/pdf/2511.19248) and [pFedBBN](https://arxiv.org/pdf/2511.18066) are avialable in the arxiv. Please have a look at the papers.
