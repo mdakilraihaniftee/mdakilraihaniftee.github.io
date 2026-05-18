@@ -45,6 +45,8 @@ nav_order: 6
 
 - **CSE-203 Tutorial**  
   *Data Structure*  
+  [Video Playlist](https://www.youtube.com/playlist?list=PLwize1zvRE1iCM_K0iymTEtIIXnow6vel)
+  
   [Slide 1 link](https://docs.google.com/presentation/d/1n4HkTZ9GbmmfyY5fYQty--YtbyfZ3x5hS8jVOBMvEV8/edit?usp=sharing)
 
   [Slide 2 link](https://docs.google.com/presentation/d/1IXNuqf55ctqRL3-RjHqezHxaAuNCeDQAiId5h1jxaEw/edit?usp=sharing)
