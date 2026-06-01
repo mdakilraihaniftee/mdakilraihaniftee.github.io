@@ -72,7 +72,7 @@ jobs:
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
-          bundler: "default" # Bypasses strict lockfile compliance blocks
+          bundler: "2.5" # Bypasses strict lockfile compliance blocks
 
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
