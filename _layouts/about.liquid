@@ -22,11 +22,9 @@ layout: default
           {% if page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
           {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
           {%
             include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
             cache_bust=true
@@ -39,461 +37,721 @@ layout: default
     {% endif %}
 
     <div class="clearfix">{{ content }}</div>
-    <br><br>
-  
+    <br>
+    <br>
 
+    {% if page.news and site.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit"><b>News</b></a>
+      </h2>
 
-<!-- News with vertical scroll -->
-{% if page.news and site.announcements.enabled %}
-  <h2>
-    <a href="{{ '/news/' | relative_url }}" style="color: inherit"><b>News</b></a>
-  </h2>
+      <div class="news-scroll-wrapper">
+        {% include news.liquid %}
+      </div>
 
-  <div class="news-scroll-wrapper">
-    {% include news.liquid %}
-  </div>
+      <style>
+        .news-scroll-wrapper {
+          max-height: 210px; /* Approx height to show 5 news items */
+          overflow-y: auto;
+          padding-right: 0.5rem;
+          scrollbar-width: thin;
+        }
 
-  <style>
-    .news-scroll-wrapper {
-      max-height: 210px; /* Approx height to show 5 news items */
-      overflow-y: auto;
-      padding-right: 0.5rem;
-      scrollbar-width: thin;
-    }
+        .news-scroll-wrapper::-webkit-scrollbar {
+          width: 6px;
+        }
 
-    .news-scroll-wrapper::-webkit-scrollbar {
-      width: 6px;
-    }
+        .news-scroll-wrapper::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
 
-    .news-scroll-wrapper::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
+        .news-scroll-wrapper::-webkit-scrollbar-thumb {
+          background-color: #aaa;
+          border-radius: 3px;
+        }
+      </style>
+    {% endif %}
+    <br>
+    <br>
+    <br>
 
-    .news-scroll-wrapper::-webkit-scrollbar-thumb {
-      background-color: #aaa;
-      border-radius: 3px;
-    }
-  </style>
-{% endif %}
-<br><br><br>
+    {% if site.latest_posts.enabled %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
+      </h2>
 
+      <div class="latest-posts-scroll-wrapper">
+        {% include latest_posts.liquid %}
+      </div>
 
+      <style>
+        .latest-posts-scroll-wrapper {
+          max-height: 600px; /* adjust based on post item height × 5 */
+          overflow-y: auto;
+          padding-right: 0.5rem;
+          scrollbar-width: thin;
+        }
 
+        .latest-posts-scroll-wrapper::-webkit-scrollbar {
+          width: 6px;
+        }
 
+        .latest-posts-scroll-wrapper::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
 
-<!-- Latest posts with vertical scroll -->
-{% if site.latest_posts.enabled %}
-  <h2>
-    <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
-  </h2>
+        .latest-posts-scroll-wrapper::-webkit-scrollbar-thumb {
+          background-color: #aaa;
+          border-radius: 3px;
+        }
+      </style>
+    {% endif %}
 
-  <div class="latest-posts-scroll-wrapper">
-    {% include latest_posts.liquid %}
-  </div>
+    {% comment %}
+      {% assign ongoing_projects = site.projects | where: "category", "Ongoing Research" | sort: "importance" %}
+      {% if ongoing_projects.size > 0 %}
+        <h2>
+          <a href="{{ '/projects/' | relative_url }}#Ongoing Research" style="color: inherit"><b>Ongoing Research Projects</b></a>
+        </h2>
 
-  <style>
-    .latest-posts-scroll-wrapper {
-      max-height: 600px; /* adjust based on post item height × 5 */
-      overflow-y: auto;
-      padding-right: 0.5rem;
-      scrollbar-width: thin;
-    }
+        <div class="scroll-container-wrapper">
+          <button class="scroll-btn left" onclick="scrollProjects('left')">&#8249;</button>
 
-    .latest-posts-scroll-wrapper::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .latest-posts-scroll-wrapper::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    .latest-posts-scroll-wrapper::-webkit-scrollbar-thumb {
-      background-color: #aaa;
-      border-radius: 3px;
-    }
-  </style>
-{% endif %}
-
-
-
-
-
-{% comment %}
-
-<!-- Ongoing Research Projects - Horizontal Scroll -->
-{% assign ongoing_projects = site.projects | where: "category", "Ongoing Research" | sort: "importance" %}
-{% if ongoing_projects.size > 0 %}
-  <h2>
-    <a href="{{ '/projects/' | relative_url }}#Ongoing Research" style="color: inherit"><b>Ongoing Research Projects</b></a>
-  </h2>
-
-  <div class="scroll-container-wrapper">
-    <button class="scroll-btn left" onclick="scrollProjects('left')">&#8249;</button>
-
-    <div id="scroll-projects" class="scroll-container">
-      {% for project in ongoing_projects %}
-        <div class="scroll-card">
-          <div class="card-content">
-            {% include projects.liquid project=project %}
+          <div id="scroll-projects" class="scroll-container">
+            {% for project in ongoing_projects %}
+              <div class="scroll-card">
+                <div class="card-content">
+                  {% include projects.liquid project=project %}
+                </div>
+              </div>
+            {% endfor %}
           </div>
+
+          <button class="scroll-btn right" onclick="scrollProjects('right')">&#8250;</button>
         </div>
-      {% endfor %}
+
+        <style>
+          .scroll-container-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+          }
+
+          .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 1rem;
+            padding: 1rem 0;
+          }
+
+          .scroll-container::-webkit-scrollbar {
+            display: none;
+          }
+
+          .scroll-card {
+            flex: 0 0 auto;
+            width: 30%;
+            min-width: 300px;
+            max-width: 420px;
+            height: 350px; /* fixed height */
+            display: flex;
+            flex-direction: column;
+            background: white;
+          }
+
+          .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem;
+          }
+
+          .scroll-card .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+
+          .scroll-btn {
+            background-color: #eee;
+            border: none;
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1;
+          }
+
+          .scroll-btn.left {
+            margin-right: 0.5rem;
+          }
+
+          .scroll-btn.right {
+            margin-left: 0.5rem;
+          }
+
+          @media screen and (max-width: 768px) {
+            .scroll-card {
+              width: 80%;
+              height: 420px;
+            }
+          }
+        </style>
+
+        <script>
+          function scrollProjects(direction) {
+            const container = document.getElementById('scroll-projects');
+            const scrollAmount = container.clientWidth * 0.9;
+            container.scrollBy({ left: direction === 'right' ? scrollAmount : -scrollAmount });
+          }
+        </script>
+
+        <br><br><br>
+      {% endif %}
+    {% endcomment %}
+
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit"><b>Selected Publications</b></a>
+      </h2>
+
+      <div class="selected-papers-scroll-wrapper">
+        {% include selected_papers.liquid %}
+      </div>
+
+      <style>
+        .selected-papers-scroll-wrapper {
+          max-height: 1500px; /* Adjust this height as needed */
+          overflow-y: auto;
+          padding-right: 0.5rem;
+          scrollbar-width: thin;
+        }
+
+        .selected-papers-scroll-wrapper::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        .selected-papers-scroll-wrapper::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+
+        .selected-papers-scroll-wrapper::-webkit-scrollbar-thumb {
+          background-color: #aaa;
+          border-radius: 3px;
+        }
+      </style>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+
+    <h2 id="ResearchAreas">
+      <a href="#ResearchAreas" style="color: inherit"><b>Research Areas</b></a>
+    </h2>
+
+    <div class="research-areas-wrapper">
+      <div class="research-category">
+        <h4><b>Multimodal Learning:</b></h4>
+        <div class="category-scroll">
+          <ol>
+            <li>
+              <img src="/assets/img/proj10.png" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="/assets/pdf/har_mmact_.pdf">Context-Aware Cross-Modal Alignment for HAR Using LLMs and Wearable Sensors (pdf)</a>
+                <p class="project-desc">
+                  A multimodal (video, language, sensor modality) model where video features are obtained from a context prompt guided Video-LLava,
+                  and applied Keyless Attention for sensor feature fusion.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <img src="/assets/img/bias.png" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="/assets/pdf/MU_social_biasness.pdf">Multimodal Bias Removal through Machine Unlearning in Large Language Models (pdf)</a>
+                <p class="project-desc">
+                  A multimodal machine-unlearning framework that selectively removes socially biased knowledge from MLLMs while preserving their
+                  reasoning ability and overall utility.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <img src="/assets/img/proverb.png" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="/assets/pdf/proverbflowdiagram.pdf"
+                  >ProverbBench: A Visual Proverbs Benchmark for Evaluating Multimodal Large Language Models (pdf)</a
+                >
+                <p class="project-desc">
+                  A multimodal proverb-understanding pipeline where text and visual encoders extract meanings, align concepts, incorporate historical
+                  context, and generate an LLM-based final interpretation.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="research-category">
+        <h4><b>Generative AI:</b></h4>
+        <div class="category-scroll">
+          <ol>
+            <li>
+              <img src="/assets/img/proj11.png" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="/projects/1_project_2/">Diffusion-Based Image Editing with Vision-Language Instructions (pdf)</a>
+                <p class="project-desc">
+                  An Image Editing Tool with User Instructions had: language processor (LLAVA), segmenter (SAM), and image editor (Stable Diffusion)
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="research-category">
+        <h4><b>Trustworthy ML, Security & Privacy:</b></h4>
+        <div class="category-scroll">
+          <ol>
+            <li>
+              <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="#">A Backpropagation-Free Jailbreak Attacks on Multimodal Large Language Models</a>
+                <p class="project-desc">
+                  We introduce a black-box jailbreak framework that leverages reinforcement learning with bandit feedback to attack multimodal LLMs
+                  without gradients
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="#">Privacy-Preserving NSFW Image Generation via Diffusion Unlearning</a>
+                <p class="project-desc">
+                  Protecting Diffusion Models (Stable Diffusion, Flux) from NSFW Jailbreaking via Harmful Knowledge Forgetting with Machine Unlearning
+                </p>
+              </div>
+            </li>
+            <li>
+              <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="#">The Dark Side of Prompt Tuning: Poisoning Attacks on Vision-Language Models at Test Time</a>
+                <p class="project-desc">
+                  PGD-based poisoning of unlabeled inference data can corrupt on-the-fly prompt tuning in CLIP-based vision-language models.
+                </p>
+              </div>
+            </li>
+            <li>
+              <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="#">Data Stealing Attacks in Federated Learning for Satellite Communication Systems</a>
+                <p class="project-desc">
+                  Investigated vulnerabilities of federated learning models in satellite communication systems to data stealing attacks (model
+                  inversion, membership inference)..
+                </p>
+              </div>
+            </li>
+            <li>
+              <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="#">Federated Unlearning Attack</a>
+                <p class="project-desc">
+                  Designed a black-box attack where a malicious client sends unlearn requests targeting important data of other clients using
+                  membership inference attacks.
+                </p>
+              </div>
+            </li>
+            <li>
+              <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="#">Gradient Inversion Attack in Test Time Adaptation (pdf)</a>
+                <p class="project-desc">
+                  Investigates privacy vulnerabilities during model adaptation by recovering input data from gradient signals.
+                </p>
+              </div>
+            </li>
+            <li>
+              <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="#">Federated Adversarial Attack in Test-Time Adaptation</a>
+                <p class="project-desc">
+                  Designed a gradient inversion attack for retrieving local client data during test-time continual learning and Proposed a defence by
+                  encrypting gradients before sending to the aggregator.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="research-category">
+        <h4><b>Federated Learning:</b></h4>
+        <div class="category-scroll">
+          <ol>
+            <li>
+              <img src="/assets/img/pr.png" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="/assets/pdf/missing_mod_fed.pdf"
+                  >When a Modality is Missing: A Cross-Modal Recovery for Federated Multimodal LLM Models (pdf)</a
+                >
+                <p class="project-desc">
+                  Introduces a modality recovery approach for clients missing either image or text in federated multimodal learning.
+                </p>
+              </div>
+            </li>
+            <li>
+              <img src="/assets/img/fedbalancett.png" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="/assets/pdf/fedbalancetta.pdf">FedBalanceTTA – Federated Learning with Balanced Test Time Adaptation (pdf)</a>
+                <p class="project-desc">Combines test-time adaptation with federated learning to balance performance across domains and clients.</p>
+              </div>
+            </li>
+            <li>
+              <img src="/assets/img/proj31.png" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="/assets/pdf/proj31.pdf">Federated Personalized Scanpath Prediction for Privacy-Preserving UI Optimization (pdf)</a>
+                <p class="project-desc">Proposes personalized scanpath learning to optimize user interfaces while preserving eye-tracking privacy.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="research-category">
+        <h4><b>Human Computer Interaction:</b></h4>
+        <div class="category-scroll">
+          <ol>
+            <li>
+              <img src="/assets/img/proj32.png" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="/assets/pdf/proj32.pdf">Voice Activated Gaze-Enhanced Multimodal Interaction for Accessibility (pdf)</a>
+                <p class="project-desc">
+                  Combines voice and gaze input to support accessible multimodal interaction for users with limited mobility.
+                </p>
+              </div>
+            </li>
+            <li>
+              <img src="/assets/img/proj30.png" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="/assets/pdf/proj30.pdf">Controllable 3D UI Exploration and its Future (pdf)</a>
+                <p class="project-desc">Explores new paradigms for interacting with 3D user interfaces, focusing on control and user experience.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="research-category">
+        <h4><b>IoT, Embedded System, Wearable/ Wearless Sensor:</b></h4>
+        <div class="category-scroll">
+          <ol>
+            <li>
+              <img src="/assets/img/proj10.png" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="/assets/pdf/har_mmact_.pdf"
+                  >Wearable Sensor Feature Alignment (Accelerometer, Gyro, Orientation) for Human Activity Recognition (pdf)</a
+                >
+                <p class="project-desc">Aligns sensor features using projection techniques to enhance HAR in low-resource or noisy environments.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="research-category">
+        <h4><b>Medical Imaging:</b></h4>
+        <div class="category-scroll">
+          <ol>
+            <li>
+              <img src="#" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="#">LLM-Driven Question Answering and Captioning for 3D CT and MRI Data (pdf)</a>
+                <p class="project-desc">
+                  A vision encoder to extract feature embedding of 3D brain MRI and abdominal CT volume data and context alignment via question
+                  answering and captioning through Large Language Model (LLM/VLM, Qwen-4B)
+                </p>
+              </div>
+            </li>
+            <li>
+              <img src="#" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="https://ieeexplore.ieee.org/abstract/document/11022489"
+                  >Organ-Seg: A Vision-Language and LLM-Enhanced Framework for User-Guided Abdominal Organ Segmentation.</a
+                >
+                <p class="project-desc">
+                  Instruction-guided medical image segmentation framework that combines LLaVA and SAM to deliver accurate, context-aware, and
+                  user-driven segmentation, even under false premises.
+                </p>
+              </div>
+            </li>
+            <li>
+              <img src="#" class="zoomable area-icon" onclick="openZoom(this)">
+              <div>
+                <a href="https://mdakilraihaniftee.github.io/assets/pdf/thesis_report.pdf"
+                  >3D Cerebrovascular Segmentation Using Semi-Supervised Approach (pdf)</a
+                >
+                <p class="project-desc">
+                  Semi-Supervised Uncertainty-Aware Knowledge Distillation for brain vessel segmentation from 3D MRA data (ITK-TubeTK dataset)
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
     </div>
 
-    <button class="scroll-btn right" onclick="scrollProjects('right')">&#8250;</button>
-  </div>
+    {% comment %}
+      {% assign ongoing_projects = site.projects | where: "category", "Research Proposal" | sort: "importance" %}
+      {% if ongoing_projects.size > 0 %}
+        <h2>
+          <a href="{{ '/projects/' | relative_url }}#Research Proposal" style="color: inherit"><b>Research Proposals</b></a>
+        </h2>
 
-  <style>
-    .scroll-container-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
+        <div class="scroll-container-wrapper">
+          <button class="scroll-btn left" onclick="scrollProjects('left')">&#8249;</button>
 
-    .scroll-container {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-
-    .scroll-container::-webkit-scrollbar {
-      display: none;
-    }
-
-    .scroll-card {
-      flex: 0 0 auto;
-      width: 30%;
-      min-width: 300px;
-      max-width: 420px;
-      height: 350px; /* fixed height */
-      display: flex;
-      flex-direction: column;
-      background: white;
-    }
-
-    .card-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 1rem;
-    }
-
-    .scroll-card .project-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      line-height: 1.3;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
-
-    .scroll-btn {
-      background-color: #eee;
-      border: none;
-      font-size: 2rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      z-index: 1;
-    }
-
-    .scroll-btn.left {
-      margin-right: 0.5rem;
-    }
-
-    .scroll-btn.right {
-      margin-left: 0.5rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      .scroll-card {
-        width: 80%;
-        height: 420px;
-      }
-    }
-  </style>
-
-  <script>
-    function scrollProjects(direction) {
-      const container = document.getElementById('scroll-projects');
-      const scrollAmount = container.clientWidth * 0.9;
-      container.scrollBy({ left: direction === 'right' ? scrollAmount : -scrollAmount });
-    }
-  </script>
-
-  <br><br><br>
-{% endif %}
-
-{% endcomment %}
-
-
-
-
-
-<!-- Selected papers with vertical scroll -->
-{% if page.selected_papers %}
-  <h2>
-    <a href="{{ '/publications/' | relative_url }}" style="color: inherit"><b>Selected Publications</b></a>
-  </h2>
-
-  <div class="selected-papers-scroll-wrapper">
-    {% include selected_papers.liquid %}
-  </div>
-
-  <style>
-    .selected-papers-scroll-wrapper {
-      max-height: 1500px; /* Adjust this height as needed */
-      overflow-y: auto;
-      padding-right: 0.5rem;
-      scrollbar-width: thin;
-    }
-
-    .selected-papers-scroll-wrapper::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .selected-papers-scroll-wrapper::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    .selected-papers-scroll-wrapper::-webkit-scrollbar-thumb {
-      background-color: #aaa;
-      border-radius: 3px;
-    }
-  </style>
-{% endif %}
-<br><br><br>
-
-
-
-<!-- Research Areas with independent scroll for each category -->
-<h2 id="ResearchAreas">
-  <a href="#ResearchAreas" style="color: inherit"><b>Research Areas</b></a>
-</h2>
-
-<div class="research-areas-wrapper">
-  <!-- Multimodal Learning -->
-  <div class="research-category">
-    <h4><b>Multimodal Learning:</b></h4>
-    <div class="category-scroll">
-      <ol>
-        <li>
-          <img src="/assets/img/proj10.png" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="/assets/pdf/har_mmact_.pdf">Context-Aware Cross-Modal Alignment for HAR Using LLMs and Wearable Sensors (pdf)</a>
-            <p class="project-desc">A multimodal (video, language, sensor modality) model where video features are obtained from a context prompt guided Video-LLava, and applied Keyless Attention for sensor feature fusion.</p>
+          <div id="scroll-projects" class="scroll-container">
+            {% for project in ongoing_projects %}
+              <div class="scroll-card">
+                <div class="card-content">
+                  {% include projects.liquid project=project %}
+                </div>
+              </div>
+            {% endfor %}
           </div>
-        </li>
 
-        <li>
-          <img src="/assets/img/bias.png" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="/assets/pdf/MU_social_biasness.pdf">Multimodal Bias Removal through Machine Unlearning in Large Language Models (pdf)</a>
-            <p class="project-desc">A multimodal machine-unlearning framework that selectively removes socially biased knowledge from MLLMs while preserving their reasoning ability and overall utility.</p>
-          </div>
-        </li>
+          <button class="scroll-btn right" onclick="scrollProjects('right')">&#8250;</button>
+        </div>
 
+        <style>
+          .scroll-container-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+          }
 
-        <li>
-          <img src="/assets/img/proverb.png" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="/assets/pdf/proverbflowdiagram.pdf">ProverbBench: A Visual Proverbs Benchmark for Evaluating Multimodal Large Language Models (pdf)</a>
-            <p class="project-desc">A multimodal proverb-understanding pipeline where text and visual encoders extract meanings, align concepts, incorporate historical context, and generate an LLM-based final interpretation.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </div>
+          .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 1rem;
+            padding: 1rem 0;
+          }
 
-  <!-- Generative AI -->
-  <div class="research-category">
-    <h4><b>Generative AI:</b></h4>
-    <div class="category-scroll">
-      <ol>
-        <li>
-          <img src="/assets/img/proj11.png" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="/projects/1_project_2/">Diffusion-Based Image Editing with Vision-Language Instructions (pdf)</a>
-            <p class="project-desc">An Image Editing Tool with User Instructions had: language processor (LLAVA), segmenter (SAM), and image editor (Stable Diffusion)</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </div>
+          .scroll-container::-webkit-scrollbar {
+            display: none;
+          }
 
-  <!-- Trustworthy ML -->
-  <div class="research-category">
-    <h4><b>Trustworthy ML, Security & Privacy:</b></h4>
-    <div class="category-scroll">
-      <ol>
-         <li>
-          <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="#">A Backpropagation-Free Jailbreak Attacks on Multimodal Large Language Models</a>
-            <p class="project-desc">We introduce a black-box jailbreak framework that leverages reinforcement learning with bandit feedback to attack multimodal LLMs without gradients</p>
-          </div>
-        </li>
+          .scroll-card {
+            flex: 0 0 auto;
+            width: 30%;
+            min-width: 300px;
+            max-width: 320px;
+            height: 420px; /* fixed height */
+            display: flex;
+            flex-direction: column;
+            background: white;
+          }
 
-        <li>
-          <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="#">Privacy-Preserving NSFW Image Generation via Diffusion Unlearning</a>
-            <p class="project-desc">Protecting Diffusion Models (Stable Diffusion, Flux) from NSFW Jailbreaking via Harmful Knowledge Forgetting with Machine Unlearning</p>
-          </div>
-        </li>
-        <li>
-          <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="#">The Dark Side of Prompt Tuning: Poisoning Attacks on Vision-Language Models at Test Time</a>
-            <p class="project-desc">PGD-based poisoning of unlabeled inference data can corrupt on-the-fly prompt tuning in CLIP-based vision-language models.</p>
-          </div>
-        </li>
-         <li>
-          <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="#">Data Stealing Attacks in Federated Learning for Satellite Communication Systems</a>
-            <p class="project-desc">Investigated vulnerabilities of federated learning models in satellite communication systems to data
-stealing attacks (model inversion, membership inference)..</p>
-          </div>
-        </li>
-        <li>
-          <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="#">Federated Unlearning Attack</a>
-            <p class="project-desc">Designed a black-box attack where a malicious client sends unlearn requests targeting important data of other clients using membership inference attacks.</p>
-          </div>
-        </li>
-        <li>
-          <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="#">Gradient Inversion Attack in Test Time Adaptation (pdf)</a>
-            <p class="project-desc">Investigates privacy vulnerabilities during model adaptation by recovering input data from gradient signals.</p>
-          </div>
-        </li>
-        <li>
-          <img src="/assets/img/abc.jpg" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="#">Federated Adversarial Attack in Test-Time Adaptation</a>
-            <p class="project-desc">Designed a gradient inversion attack for retrieving local client data during test-time continual learning and Proposed a defence by encrypting gradients before sending to the aggregator.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </div>
+          .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem;
+          }
 
+          .scroll-card .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
 
+          .scroll-btn {
+            background-color: #eee;
+            border: none;
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1;
+          }
 
-  <!-- Federated Learning -->
-  <div class="research-category">
-    <h4><b>Federated Learning:</b></h4>
-    <div class="category-scroll">
-      <ol>
-        <li>
-          <img src="/assets/img/pr.png" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="/assets/pdf/missing_mod_fed.pdf">When a Modality is Missing: A Cross-Modal Recovery for Federated Multimodal LLM Models (pdf)</a>
-            <p class="project-desc">Introduces a modality recovery approach for clients missing either image or text in federated multimodal learning.</p>
-          </div>
-        </li>
-        <li>
-          <img src="/assets/img/fedbalancett.png" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="/assets/pdf/fedbalancetta.pdf">FedBalanceTTA – Federated Learning with Balanced Test Time Adaptation (pdf)</a>
-            <p class="project-desc">Combines test-time adaptation with federated learning to balance performance across domains and clients.</p>
-          </div>
-        </li>
-        <li>
-          <img src="/assets/img/proj31.png" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="/assets/pdf/proj31.pdf">Federated Personalized Scanpath Prediction for Privacy-Preserving UI Optimization (pdf)</a>
-            <p class="project-desc">Proposes personalized scanpath learning to optimize user interfaces while preserving eye-tracking privacy.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </div>
+          .scroll-btn.left {
+            margin-right: 0.5rem;
+          }
 
-  <!-- HCI -->
-  <div class="research-category">
-    <h4><b>Human Computer Interaction:</b></h4>
-    <div class="category-scroll">
-      <ol>
-        <li>
-          <img src="/assets/img/proj32.png" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="/assets/pdf/proj32.pdf">Voice Activated Gaze-Enhanced Multimodal Interaction for Accessibility (pdf)</a>
-            <p class="project-desc">Combines voice and gaze input to support accessible multimodal interaction for users with limited mobility.</p>
-          </div>
-        </li>
-        <li>
-          <img src="/assets/img/proj30.png" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="/assets/pdf/proj30.pdf">Controllable 3D UI Exploration and its Future (pdf)</a>
-            <p class="project-desc">Explores new paradigms for interacting with 3D user interfaces, focusing on control and user experience.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </div>
+          .scroll-btn.right {
+            margin-left: 0.5rem;
+          }
 
+          @media screen and (max-width: 768px) {
+            .scroll-card {
+              width: 80%;
+              height: 420px;
+            }
+          }
+        </style>
 
-  <!-- IoT -->
-  <div class="research-category">
-    <h4><b>IoT, Embedded System, Wearable/ Wearless Sensor:</b></h4>
-    <div class="category-scroll">
-      <ol>
-        <li>
-          <img src="/assets/img/proj10.png" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="/assets/pdf/har_mmact_.pdf">Wearable Sensor Feature Alignment (Accelerometer, Gyro, Orientation) for Human Activity Recognition (pdf)</a>
-            <p class="project-desc">Aligns sensor features using projection techniques to enhance HAR in low-resource or noisy environments.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </div>
+        <script>
+          function scrollProjects(direction) {
+            const container = document.getElementById('scroll-projects');
+            const scrollAmount = container.clientWidth * 0.9;
+            container.scrollBy({ left: direction === 'right' ? scrollAmount : -scrollAmount });
+          }
+        </script>
+
+        <br><br><br>
+      {% endif %}
+    {% endcomment %}
+
+    <h2 id="education"><b>Education</b></h2>
+    <ul>
+      <li>
+        <strong>Master of Science in Computer Science and Engineering (MSc. Engg.)</strong> <span style="color:green;">[2024–Present]</span><br>
+        Department of Computer Science and Engineering (CSE),<br>
+        Bangladesh University of Engineering & Technology (BUET), Dhaka, Bangladesh
+      </li>
+      <br>
+
+      <li>
+        <strong>Bachelor of Science in Computer Science and Engineering (BSc. Engg.)</strong> <span style="color:green;">[2019–2024]</span><br>
+        Department of Computer Science and Engineering (CSE),<br>
+        Khulna University of Engineering & Technology (KUET), Khulna, Bangladesh<br>
+        CGPA: 3.73 / 4.00
+      </li>
+      <br>
+
+      <li>
+        <strong>Higher Secondary Certificate (HSC)</strong> <span style="color:green;">[2016–2018]</span><br>
+        New Govt Degree College, Rajshahi, Bangladesh<br>
+        GPA: 5.00 / 5.00
+      </li>
+      <br>
+
+      <li>
+        <strong>Secondary School Certificate (SSC)</strong> <span style="color:green;">[2011–2016]</span><br>
+        R.B Govt. High School, Joypurhat Bangladesh<br>
+        GPA: 5.00 / 5.00
+      </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+
+    <h2 id="workexperience"><b>Work & Research Experience</b></h2>
+
+    <h3>Research Experience</h3>
+    <ul>
+      <li>
+        <strong>Research Assistant</strong> <span style="color:green;">[April 2024 – Present]</span><br>
+        Center for Computational & Data Sciences (CCDS),<br>
+        Independent University, Bangladesh<br>
+        • Research in multimodal learning (vision, language, sensor data)<br>
+        • Projects: Foundation Models, Test-Time Adaptation, Federated Learning, HAR<br>
+        • Participated in math classes on Linear Algebra, Probabilistic ML, and Statistics
+      </li>
+      <br>
+
+      <li>
+        <strong>Research Intern</strong> <span style="color:green;">[September 2022 – February 2023]</span><br>
+        MazeGeek Technologies BD Ltd., Dhaka, Bangladesh<br>
+        • Developed a Face Mask Detection system using 3D-CNN and OpenCV during COVID-19
+      </li>
+    </ul>
+
+    <h3>Teaching Experience</h3>
+    <ul>
+      <li>
+        <strong>Teaching Assistant (Tutor) – CSE-100T, CSE-200T, CSE203T</strong> <span style="color:green;">[Summer 2025, Fall 2025]</span><br>
+        Coding for All Initiative,<br>
+        Independent University, Bangladesh<br>
+        • Tutored students in Python, AI, Advance Programming, Prompt Engineering, Data Structure and application development
+      </li>
+      <br>
+
+      <li>
+        <strong>Math Lecturer</strong> <span style="color:green;">[November 2019 – March 2022]</span><br>
+        Udvash Academic & Admission Care, Khulna Branch, Bangladesh<br>
+        • Taught university admission math (Linear Algebra, Probability, Geometry, Calculus)
+      </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+
+    <h2 id="honowards"><b>Honors and Awards</b></h2>
+    <p>I've been fortunate to receive recognition for my academic excellence and co-curricular achievements over the years.</p>
+    <ul>
+      <li>
+        <strong>Assisted Reviewer – IJCNN 2025 & IEEE Access Journal:</strong> Contributed to the peer-review process of a top-tier conference and a
+        reputed journal. <span style="color:green;">[2025]</span>
+      </li>
+      <br>
+
+      <li>
+        <strong>Dean’s Award:</strong> Received the Dean’s Award for outstanding academic performance. <span style="color:green;">[2021, 2020]</span>
+      </li>
+      <br>
+
+      <li>
+        <strong>1st Runner Up – National Math Olympiad (Regional Round, Rajshahi):</strong> Secured the 1st Runner Up position in the regional round
+        of the National Math Olympiad. <span style="color:green;">[2017]</span>
+      </li>
+      <br>
+
+      <li>
+        <strong>General Secretary – Bit2Byte (KUET R&D Community):</strong> Led research and development initiatives as General Secretary of KUET’s
+        official R&D club. <span style="color:green;">[2023–2024]</span>
+      </li>
+      <br>
+
+      <li>
+        <strong>Top 25 – HackerEarth ML Competition (Pet Adopt):</strong> Achieved 25th rank in a competitive machine learning challenge on
+        HackerEarth. <span style="color:green;">[2022]</span>
+      </li>
+      <br>
+
+      <li>
+        <strong>5th Position – Intra KUET Programming Contest:</strong> Ranked 5th out of 39 teams in KUET's inter-departmental programming contest.
+        <span style="color:green;">[2022]</span>
+      </li>
+      <br>
+
+      <li>
+        <strong>250+ Problems Solved – Codeforces:</strong> Consistently solved competitive programming problems and participated in contests.
+        <span style="color:green;">[2021]</span>
+      </li>
+    </ul>
+    <br>
+    <br>
+
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% include social.liquid %}</div>
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+
+    {% if site.newsletter.enabled and site.footer_fixed %}
+      {% include scripts/newsletter.liquid center=true %}
+    {% endif %}
+  </article>
 </div>
 
- <!-- Medical Imaging -->
-  <div class="research-category">
-    <h4><b>Medical Imaging:</b></h4>
-    <div class="category-scroll">
-      <ol>
-        <li>
-          <img src="#" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="#">LLM-Driven Question Answering and Captioning for 3D CT and MRI Data (pdf)</a>
-            <p class="project-desc">A vision encoder to extract feature embedding of 3D brain MRI and abdominal CT volume data and context alignment via question answering and captioning through Large Language Model (LLM/VLM, Qwen-4B)</p>
-          </div>
-        </li>
-        <li>
-          <img src="#" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="https://ieeexplore.ieee.org/abstract/document/11022489">Organ-Seg: A Vision-Language and LLM-Enhanced Framework for
-User-Guided Abdominal Organ Segmentation.</a>
-            <p class="project-desc">Instruction-guided medical image segmentation framework that combines LLaVA and SAM to deliver accurate, context-aware, and user-driven segmentation, even under false premises.</p>
-          </div>
-        </li>
-        <li>
-          <img src="#" class="zoomable area-icon" onclick="openZoom(this)">
-          <div>
-            <a href="https://mdakilraihaniftee.github.io/assets/pdf/thesis_report.pdf">3D Cerebrovascular Segmentation Using Semi-Supervised Approach (pdf)</a>
-            <p class="project-desc">Semi-Supervised Uncertainty-Aware Knowledge Distillation for brain vessel segmentation from 3D MRA data
-(ITK-TubeTK dataset)</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </div> </article>
-</div>
-
-
-<!-- Zoom Modal -->
 <div id="imgModal" class="modal" onclick="this.style.display='none'">
   <span class="close">&times;</span>
   <img class="modal-content" id="imgZoomTarget">
@@ -516,7 +774,6 @@ User-Guided Abdominal Organ Segmentation.</a>
     color: #222;
   }
 
-
   .category-scroll {
     max-height: 210px;
     overflow-y: auto;
@@ -534,11 +791,10 @@ User-Guided Abdominal Organ Segmentation.</a>
   }
 
   .project-desc {
-  margin: 0.3rem 0 0.6rem 0;
-  font-size: 0.92rem;
-  line-height: 1.4;
+    margin: 0.3rem 0 0.6rem 0;
+    font-size: 0.92rem;
+    line-height: 1.4;
   }
-
 
   .research-category ol {
     list-style-position: inside;
@@ -578,7 +834,7 @@ User-Guided Abdominal Organ Segmentation.</a>
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
   }
 
   .modal-content {
@@ -590,8 +846,14 @@ User-Guided Abdominal Organ Segmentation.</a>
   }
 
   @keyframes zoomIn {
-    from { transform: scale(0.5); opacity: 0 }
-    to { transform: scale(1); opacity: 1 }
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 
   .close {
@@ -607,213 +869,12 @@ User-Guided Abdominal Organ Segmentation.</a>
 
 <script>
   function openZoom(img) {
-    const modal = document.getElementById("imgModal");
-    const modalImg = document.getElementById("imgZoomTarget");
-    modal.style.display = "block";
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('imgZoomTarget');
+    modal.style.display = 'block';
     modalImg.src = img.src;
   }
 </script>
-<br><br><br>
-
-
-
-{% comment %}
-
-<!-- Research Proposals - Horizontal Scroll -->
-{% assign ongoing_projects = site.projects | where: "category", "Research Proposal" | sort: "importance" %}
-{% if ongoing_projects.size > 0 %}
-  <h2>
-    <a href="{{ '/projects/' | relative_url }}#Research Proposal" style="color: inherit"><b>Research Proposals</b></a>
-  </h2>
-
-  <div class="scroll-container-wrapper">
-    <button class="scroll-btn left" onclick="scrollProjects('left')">&#8249;</button>
-
-    <div id="scroll-projects" class="scroll-container">
-      {% for project in ongoing_projects %}
-        <div class="scroll-card">
-          <div class="card-content">
-            {% include projects.liquid project=project %}
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-
-    <button class="scroll-btn right" onclick="scrollProjects('right')">&#8250;</button>
-  </div>
-
-  <style>
-    .scroll-container-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .scroll-container {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-
-    .scroll-container::-webkit-scrollbar {
-      display: none;
-    }
-
-    .scroll-card {
-      flex: 0 0 auto;
-      width: 30%;
-      min-width: 300px;
-      max-width: 320px;
-      height: 420px; /* fixed height */
-      display: flex;
-      flex-direction: column;
-      background: white;
-    }
-
-    .card-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 1rem;
-    }
-
-    .scroll-card .project-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      line-height: 1.3;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
-
-    .scroll-btn {
-      background-color: #eee;
-      border: none;
-      font-size: 2rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      z-index: 1;
-    }
-
-    .scroll-btn.left {
-      margin-right: 0.5rem;
-    }
-
-    .scroll-btn.right {
-      margin-left: 0.5rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      .scroll-card {
-        width: 80%;
-        height: 420px;
-      }
-    }
-  </style>
-
-  <script>
-    function scrollProjects(direction) {
-      const container = document.getElementById('scroll-projects');
-      const scrollAmount = container.clientWidth * 0.9;
-      container.scrollBy({ left: direction === 'right' ? scrollAmount : -scrollAmount });
-    }
-  </script> 
-
-  <br><br><br>
-{% endif %} 
-{% endcomment %}
-
-    <!-- Education -->
-    <h2 id="education"><b>Education</b></h2>
-    <ul>
-
-      <li><strong>Master of Science in Computer Science and Engineering (MSc. Engg.)</strong> <span style="color:green;">[2024–Present]</span><br>
-      Department of Computer Science and Engineering (CSE),<br>
-      Bangladesh University of Engineering & Technology (BUET), Dhaka, Bangladesh</li><br>
-    
-      <li><strong>Bachelor of Science in Computer Science and Engineering (BSc. Engg.)</strong> <span style="color:green;">[2019–2024]</span><br>
-      Department of Computer Science and Engineering (CSE),<br>
-      Khulna University of Engineering & Technology (KUET), Khulna, Bangladesh<br>
-      CGPA: 3.73 / 4.00</li><br>
-    
-      <li><strong>Higher Secondary Certificate (HSC)</strong> <span style="color:green;">[2016–2018]</span><br>
-      New Govt Degree College, Rajshahi, Bangladesh<br>
-      GPA: 5.00 / 5.00</li><br>
-    
-      <li><strong>Secondary School Certificate (SSC)</strong> <span style="color:green;">[2011–2016]</span><br>
-      R.B Govt. High School, Joypurhat Bangladesh<br>
-      GPA: 5.00 / 5.00</li>
-    </ul>
-    <br><br><br>
-    
-    <!-- Work & Research Experience -->
-    <h2 id="workexperience"><b>Work & Research Experience</b></h2>
-    
-    <h3>Research Experience</h3>
-    <ul>
-      <li><strong>Research Assistant</strong> <span style="color:green;">[April 2024 – Present]</span><br>
-      Center for Computational & Data Sciences (CCDS),<br>
-      Independent University, Bangladesh<br>
-      • Research in multimodal learning (vision, language, sensor data)<br>
-      • Projects: Foundation Models, Test-Time Adaptation, Federated Learning, HAR<br>
-      • Participated in math classes on Linear Algebra, Probabilistic ML, and Statistics</li><br>
-    
-      <li><strong>Research Intern</strong> <span style="color:green;">[September 2022 – February 2023]</span><br>
-      MazeGeek Technologies BD Ltd., Dhaka, Bangladesh<br>
-      • Developed a Face Mask Detection system using 3D-CNN and OpenCV during COVID-19</li>
-    </ul>
-    
-    <h3>Teaching Experience</h3>
-    <ul>
-      <li><strong>Teaching Assistant (Tutor) – CSE-100T, CSE-200T, CSE203T</strong> <span style="color:green;">[Summer 2025, Fall 2025]</span><br>
-      Coding for All Initiative,<br>
-      Independent University, Bangladesh<br>
-      • Tutored students in Python, AI, Advance Programming, Prompt Engineering, Data Structure and application development</li><br>
-    
-      <li><strong>Math Lecturer</strong> <span style="color:green;">[November 2019 – March 2022]</span><br>
-      Udvash Academic & Admission Care, Khulna Branch, Bangladesh<br>
-      • Taught university admission math (Linear Algebra, Probability, Geometry, Calculus)</li>
-    </ul>
-    <br><br><br>
-
-    <!-- Honors and Awards -->
-    <h2 id="honowards"><b>Honors and Awards</b></h2>
-    <p>I've been fortunate to receive recognition for my academic excellence and co-curricular achievements over the years.</p>
-    <ul>
-      <li><strong>Assisted Reviewer – IJCNN 2025 & IEEE Access Journal:</strong> Contributed to the peer-review process of a top-tier conference and a reputed journal. <span style="color:green;">[2025]</span></li><br>
-
-      <li><strong>Dean’s Award:</strong> Received the Dean’s Award for outstanding academic performance. <span style="color:green;">[2021, 2020]</span></li><br>
-      
-      <li><strong>1st Runner Up – National Math Olympiad (Regional Round, Rajshahi):</strong> Secured the 1st Runner Up position in the regional round of the National Math Olympiad. <span style="color:green;">[2017]</span></li><br>
-    
-      <li><strong>General Secretary – Bit2Byte (KUET R&D Community):</strong> Led research and development initiatives as General Secretary of KUET’s official R&D club. <span style="color:green;">[2023–2024]</span></li><br>
-    
-      <li><strong>Top 25 – HackerEarth ML Competition (Pet Adopt):</strong> Achieved 25th rank in a competitive machine learning challenge on HackerEarth. <span style="color:green;">[2022]</span></li><br>
-    
-      <li><strong>5th Position – Intra KUET Programming Contest:</strong> Ranked 5th out of 39 teams in KUET's inter-departmental programming contest. <span style="color:green;">[2022]</span></li><br>
-    
-      <li><strong>250+ Problems Solved – Codeforces:</strong> Consistently solved competitive programming problems and participated in contests. <span style="color:green;">[2021]</span></li>
-    </ul>
-    <br><br>
-
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
-
-    {% if site.newsletter.enabled and site.footer_fixed %}
-      {% include scripts/newsletter.liquid center=true %}
-    {% endif %}
-  </article>
-</div>
+<br>
+<br>
+<br>
