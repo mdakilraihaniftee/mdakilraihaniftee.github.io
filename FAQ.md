@@ -81,7 +81,7 @@ You need to [create a personal access token](https://docs.github.com/en/authenti
 
 We implemented support for [Prettier code formatting](https://prettier.io/) in [#2048](https://github.com/alshedivat/al-folio/pull/2048). It basically ensures that your code is [well formatted](https://prettier.io/docs/en/). If you want to ensure your code is compliant with `Prettier`, you have a few options:
 
-- if you are running locally with `Docker` and using [development containers](https://github.com/alshedivat/al-folio/blob/main/INSTALL.md#local-setup-with-development-containers), `Prettier` is already included
+- if you are running locally with `Docker` and using [development containers](https://github.com/alshedivat/al-folio/blob/main/INSTALL.md), `Prettier` is already included
 - if you don't use `Docker`, it is simple to integrate it with your preferred IDE using an [extension](https://prettier.io/docs/en/editors)
 - if you want to run it manually, you can follow the first 2 steps in [this tutorial](https://george-gca.github.io/blog/2023/slidev_for_non_web_devs/) (`Installing node version manager (nvm)` and `Installing Node (latest version)`), then, install it using `npm install prettier` inside the project directory, or install it globally on your computer using `npm install -g prettier`. To run `Prettier` on your current directory use `npx prettier . --write`.
 
@@ -95,60 +95,3 @@ Probably your GitHub workflow is throwing an error like this:
 
 ```bash
 /opt/hostedtoolcache/Ruby/3.0.2/x64/lib/ruby/gems/3.0.0/gems/bundler-2.5.5/lib/bundler/runtime.rb:304:in `check_for_activated_spec!': You have already activated uri 0.10.1, but your Gemfile requires uri 0.13.0. Since uri is a default gem, you can either remove your dependency on it or try updating to a newer version of bundler that supports uri as a default gem. (Gem::LoadError)
-```
-
-or maybe displaying a warning like one of these:
-
-```
-Node.js 16 actions are deprecated. Please update the following actions to use Node.js 20: actions/checkout@v3. For more information see: https://github.blog/changelog/2023-09-22-github-actions-transitioning-from-node-16-to-node-20/.
-Node.js 16 actions are deprecated. Please update the following actions to use Node.js 20: actions/checkout@v2, actions/cache@v2. For more information see: https://github.blog/changelog/2023-09-22-github-actions-transitioning-from-node-16-to-node-20/.
-The following actions uses node12 which is deprecated and will be forced to run on node16: actions/checkout@v2, actions/cache@v2. For more info: https://github.blog/changelog/2023-06-13-github-actions-all-actions-will-run-on-node16-instead-of-node12-by-default/
-The `set-output` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
-```
-
-If that's the case, you are using deprecated libraries/commands. This happens because you are using a very old version of al-folio. To fix this it is recommended [upgrading your code to the latest version](INSTALL.md#upgrading-from-a-previous-version) of the template. You will probably need to do some manual merging. If you find it easier, you could create a copy of your repository, do a fresh installation from the template and reapply all your changes. For this I would recommend a tool like [meld](https://meldmerge.org/) or [winmerge](https://winmerge.org/) to check the differences between directories/files.
-
-Note that libraries tend to be deprecated and support for them dropped as they are no longer maintained, and keep using them involves security breaches. Also, some of these deprecations are enforced, for example, by GitHub itself, so there's so much we can do. We have also added tons of new functionality, as well as tidying things up and improving the overall speed and structure, so you could also benefit from these improvements.
-
----
-
-### I am trying to deploy my site, but it fails with `Could not find gem 'jekyll-diagrams' in locally installed gems`. How do I fix that?
-
-`jekyll-diagrams` support was dropped in [#1992](https://github.com/alshedivat/al-folio/pull/1992) in favor of using `mermaid.js` directly. Simply [update your code](INSTALL.md#upgrading-from-a-previous-version) to get the latest changes.
-
----
-
-### How can I update Academicons version on the template
-
-To update the Academicons version, you need to download the latest release from the [Academicons website](https://jpswalsh.github.io/academicons/). After downloading, extract the zip file and copy the files `academicons.ttf` and `academicons.woff` from the `fonts/` directory to `assets/fonts/` and the file `academicons.min.css` from the `css/` directory to `assets/css/`.
-
----
-
-### How can I update Font Awesome version on the template
-
-To update the Font Awesome version, you need to download the latest release "for the web" from the [Font Awesome website](https://fontawesome.com/download). After downloading, extract the zip file and copy the `scss/` directory content to `_sass/font-awesome/` and the `webfonts/` content to `assets/webfonts/`.
-
----
-
-### How can I update Tabler Icons version on the template
-
-To update the Tabler Icons version, you need to download the latest release from the [Tabler Icons website](https://tabler.io/icons). After downloading, extract the zip file and copy the files `tabler-icons-filled.scss`, `tabler-icons-outline.scss`, and `tabler-icons.scss` from the `webfont/` directory to `_sass/tabler-icons/`, and all the files from `webfont/fonts/` to `assets/fonts/`.
-
----
-
-### What do all these GitHub actions/workflows mean?
-
-GitHub actions are a way to automate tasks in the repository. They are defined in `.github/workflows/` directory. Each file in this directory is a workflow. Workflows are made up of one or more jobs, and each job runs on a virtual machine hosted by GitHub. You can see the status of the workflows in the `Actions` tab of your repository. For more information, check the [GitHub Actions documentation](https://docs.github.com/en/actions).
-
-Currently we have the following workflows:
-
-- `axe.yml`: does some accessibility testing in your site. It uses the [axe cli](https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli) tool with a chrome driver to render the webpage and allow the analysis. Must be run manually, since fixing some of the issues is not straightforward
-- `broken-links-site.yml`: checks for broken links in your built website with the [lychee-action](https://github.com/lycheeverse/lychee-action)
-- `broken-links.yml`: checks for broken links in your repository with the [lychee-action](https://github.com/lycheeverse/lychee-action)
-- `deploy-docker-tag.yml`: adds some metadata to the docker image and pushes it to Docker Hub
-- `deploy-image.yml`: deploys a new docker image with the latest changes to Docker Hub
-- `deploy.yml`: deploys the website to GitHub Pages
-- `docker-slim.yml`: deploys a smaller version of the docker image to Docker Hub with the [docker-slim-action](https://github.com/kitabisa/docker-slim-action)
-- `lighthouse-badger.yml`: runs a [lighthouse](https://github.com/GoogleChrome/lighthouse) test for your site with the [lighthouse-badger-action](https://github.com/MyActionWay/lighthouse-badger-action), saving the results in the repository for easy inspecting, as can be seen [here](https://github.com/alshedivat/al-folio?tab=readme-ov-file#lighthouse-pagespeed-insights). For more information on how to enable this workflow, check our [FAQ question about it](https://github.com/alshedivat/al-folio/blob/main/FAQ.md#when-i-manually-run-the-lighthouse-badger-workflow-it-fails-with-error-input-required-and-not-supplied-token-how-do-i-fix-that)
-- `prettier-comment-on-pr.yml`: not working. For now, this action is disabled. It was supposed to run prettier on the PRs and comment on them with the changes needed. For more information, check [issue 2115](https://github.com/alshedivat/al-folio/issues/2115)
-- `prettier.yml`: runs [prettier](https://prettier.io/) on the code to ensure it is well formatted. For more information, check our [FAQ question about it](https://github.com/alshedivat/al-folio/blob/main/FAQ.md#my-code-runs-fine-locally-but-when-i-create-a-commit-and-submit-it-it-fails-with-prettier-code-formatter-workflow-run-failed-for-main-branch-how-do-i-fix-that)
