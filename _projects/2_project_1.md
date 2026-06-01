@@ -54,11 +54,11 @@ giscus_comments: true
 
 ## Tech Stack
 
-- **Language**: Python 3  
-- **ML Model**: Scikit-learn (Decision Tree Classifier)  
-- **Fuzzy Logic**: Custom rule-based reasoning  
-- **Execution**: CLI-based interaction  
-- **Data Handling**: NumPy arrays for move and state logic  
+- **Language**: Python 3
+- **ML Model**: Scikit-learn (Decision Tree Classifier)
+- **Fuzzy Logic**: Custom rule-based reasoning
+- **Execution**: CLI-based interaction
+- **Data Handling**: NumPy arrays for move and state logic
 
 ---
 

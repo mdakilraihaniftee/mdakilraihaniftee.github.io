@@ -50,19 +50,16 @@ category: Ongoing Research
   </div>
 </div>
 
-
-
 <div class="caption text-center">
   The training objective combines classification loss and contrastive alignment loss to refine the multimodal representation space.
 </div>
 
-
 ## 🔖 References
 
-1. J. Gao et al., “Video-LLaVA: Large Language and Vision Assistant for Video Understanding,” *arXiv:2308.01377*, 2023.
-2. Y. Wang et al., “MMAct: A Large-Scale Multi-Modal Dataset for Human Activity Understanding in Crowded Scenarios,” *ICCV*, 2021.
-3. X. Chen et al., “Multimodal Sensor Fusion for Human Activity Recognition with Deep Learning,” *IEEE Sensors Journal*, vol. 20, no. 18, pp. 10894–10903, 2020.
-4. A. Vaswani et al., “Attention Is All You Need,” *NeurIPS*, 2017.
-5. M.-T. Luong et al., “Effective Approaches to Attention-Based Neural Machine Translation,” *arXiv:1508.04025*, 2015.
+1. J. Gao et al., “Video-LLaVA: Large Language and Vision Assistant for Video Understanding,” _arXiv:2308.01377_, 2023.
+2. Y. Wang et al., “MMAct: A Large-Scale Multi-Modal Dataset for Human Activity Understanding in Crowded Scenarios,” _ICCV_, 2021.
+3. X. Chen et al., “Multimodal Sensor Fusion for Human Activity Recognition with Deep Learning,” _IEEE Sensors Journal_, vol. 20, no. 18, pp. 10894–10903, 2020.
+4. A. Vaswani et al., “Attention Is All You Need,” _NeurIPS_, 2017.
+5. M.-T. Luong et al., “Effective Approaches to Attention-Based Neural Machine Translation,” _arXiv:1508.04025_, 2015.
 
 ---

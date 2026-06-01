@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our [FedCTTA](https://mdakilraihaniftee.github.io/assets/pdf/FedCTTA.pdf) paper got accepted in  [IJCNN 2025](https://2025.ijcnn.org/)
+Our [FedCTTA](https://mdakilraihaniftee.github.io/assets/pdf/FedCTTA.pdf) paper got accepted in [IJCNN 2025](https://2025.ijcnn.org/)

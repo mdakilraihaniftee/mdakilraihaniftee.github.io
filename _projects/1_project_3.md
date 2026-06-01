@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Semantic Cognitive Distraction Attack (SCD) in LLM 
+title: Semantic Cognitive Distraction Attack (SCD) in LLM
 description: Multimodal Jailbreak Attack via Contextual Reasoning Manipulation
 img: assets/img/scd_attack.png
 importance: 1
@@ -53,10 +53,10 @@ category: Ongoing Research
 
 ## 🔖 References
 
-1. D. Yang et al., “CS-DJ: Cognitive Overload Distraction Jailbreak for Multimodal LLMs,” *arXiv:2406.04031*, 2024.  
-2. X. Tang et al., “MM-SafetyBench: A Benchmark Suite for Safety Evaluation of Multimodal LLMs,” *arXiv:2403.09792*, 2024.  
-3. H. Zhang et al., “HADES: Typographic Attacks for Stealthy Jailbreaks in MLLMs,” *arXiv:2502.10794*, 2024.  
-4. OpenAI, “GPT-4 Technical Report,” 2023.  
-5. Touvron et al., “LLaVA: Visual Instruction Tuning,” *arXiv:2304.08485*, 2023.
+1. D. Yang et al., “CS-DJ: Cognitive Overload Distraction Jailbreak for Multimodal LLMs,” _arXiv:2406.04031_, 2024.
+2. X. Tang et al., “MM-SafetyBench: A Benchmark Suite for Safety Evaluation of Multimodal LLMs,” _arXiv:2403.09792_, 2024.
+3. H. Zhang et al., “HADES: Typographic Attacks for Stealthy Jailbreaks in MLLMs,” _arXiv:2502.10794_, 2024.
+4. OpenAI, “GPT-4 Technical Report,” 2023.
+5. Touvron et al., “LLaVA: Visual Instruction Tuning,” _arXiv:2304.08485_, 2023.
 
 ---

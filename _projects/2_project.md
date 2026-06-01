@@ -19,21 +19,21 @@ This project was designed to help users stay informed about the latest developme
 
 ## 🔍 Features
 
-- 🌐 Global & Country-wise COVID-19 tracking  
-- 📊 Real-time statistics (confirmed, active, recovered, deaths)  
-- 📈 Pie chart & card-based visualizations  
-- 🌙 Dark and Light UI themes  
-- 🔁 Pull-to-refresh and API updates  
-- 💡 Flutter UI design and responsive layout  
+- 🌐 Global & Country-wise COVID-19 tracking
+- 📊 Real-time statistics (confirmed, active, recovered, deaths)
+- 📈 Pie chart & card-based visualizations
+- 🌙 Dark and Light UI themes
+- 🔁 Pull-to-refresh and API updates
+- 💡 Flutter UI design and responsive layout
 
 ---
 
 ## 🧩 Tech Stack
 
-- **Frontend**: Flutter (Dart)  
-- **Backend/API**: Public REST COVID-19 APIs (e.g., [https://disease.sh](https://disease.sh))  
-- **State Management**: `setState()` (basic), with scope for provider integration  
-- **Chart Visualization**: Pie chart using `fl_chart` package  
+- **Frontend**: Flutter (Dart)
+- **Backend/API**: Public REST COVID-19 APIs (e.g., [https://disease.sh](https://disease.sh))
+- **State Management**: `setState()` (basic), with scope for provider integration
+- **Chart Visualization**: Pie chart using `fl_chart` package
 
 ---
 
@@ -62,3 +62,4 @@ This project was designed to help users stay informed about the latest developme
 1. Clone the repository:
    ```bash
    git clone https://github.com/mdakilraihaniftee/Corona-App.git
+   ```

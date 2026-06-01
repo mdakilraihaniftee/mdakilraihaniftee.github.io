@@ -7,9 +7,7 @@
           {% if site.title == 'blank' %}
             {% if site.first_name %}
               Md
-              <span class="font-weight-bold">
-              Akil
-              </span>
+              <span class="font-weight-bold"> Akil </span>
             {% endif %}
             {% if site.middle_name %}
               {{- site.middle_name -}}
@@ -57,30 +55,20 @@
             </a>
           </li>
 
-          
           <!-- Education -->
           <li class="nav-item">
-            <a class="nav-link" href="{{ '/' | relative_url }}#education">
-              Education
-            </a>
+            <a class="nav-link" href="{{ '/' | relative_url }}#education"> Education </a>
           </li>
 
           <!-- Experience -->
           <li class="nav-item">
-            <a class="nav-link" href="{{ '/' | relative_url }}#workexperience">
-              Experience
-            </a>
+            <a class="nav-link" href="{{ '/' | relative_url }}#workexperience"> Experience </a>
           </li>
 
           <!-- Achievements -->
           <li class="nav-item">
-            <a class="nav-link" href="{{ '/' | relative_url }}#honowards">
-              Achievements
-            </a>
+            <a class="nav-link" href="{{ '/' | relative_url }}#honowards"> Achievements </a>
           </li>
-
-
-
 
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}

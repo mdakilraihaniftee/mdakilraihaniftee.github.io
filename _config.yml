@@ -3,15 +3,15 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Md Akil 
-middle_name: Raihan 
+first_name: Md Akil
+middle_name: Raihan
 last_name: Iftee
 contact_note: >
   Feel free to reach out via email or LinkedIn.
-description: > 
-  
+description: >
+
 footer_text: >
-  
+
 keywords: #jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: prof_pic.jpg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -67,7 +67,6 @@ serve_og_meta: false # Include Open Graph meta tags in the HTML head
 serve_schema_org: false # Include Schema.org in the HTML head
 og_image: # The site-wide (default for all links) Open Graph preview image
 
-
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
@@ -103,10 +102,10 @@ related_blog_posts:
 # Giscus comments (RECOMMENDED)
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
 giscus:
-  repo:  # <your-github-user-name>/<your-github-repo-name>
-  repo_id:  # specify your repo_id (see https://giscus.app/)
+  repo: # <your-github-user-name>/<your-github-repo-name>
+  repo_id: # specify your repo_id (see https://giscus.app/)
   category: Comments # name of the category under which discussions will be created
-  category_id:  # specify your category_id (see https://giscus.app/)
+  category_id: # specify your category_id (see https://giscus.app/)
   mapping: title # identify discussions by post title
   strict: 1 # use strict identification mode
   reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
@@ -158,7 +157,7 @@ collections:
 announcements:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit:  # leave blank to include all the news in the `_news` folder
+  limit: # leave blank to include all the news in the `_news` folder
 
 latest_posts:
   enabled: false
@@ -205,7 +204,7 @@ exclude:
   - readme_preview/
   - vendor
   - _pages/cv.md
-  - _pages/profiles.md    
+  - _pages/profiles.md
   - _pages/repositories.md
   - _pages/dropdown.md
   - _posts_templates/
@@ -275,7 +274,7 @@ display_categories: ["paper-review", "code"] # these categories will be displaye
 
 scholar:
   last_name: [Iftee]
-  first_name: [Md. Akil Raihan, Md. Akil Raihan ]
+  first_name: [Md. Akil Raihan, Md. Akil Raihan]
 
   style: apa
   locale: en

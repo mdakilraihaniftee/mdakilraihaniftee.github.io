@@ -2,8 +2,8 @@
 layout: post
 title: "Paper Review - Adversarial Attacks in Test Time Adaptation Methods"
 date: 2024-01-05 11:30:00
-description: 
-tags: 
+description:
+tags:
 categories: paper-review
 thumbnail: assets/img/paper_review/1.png
 images:
@@ -16,7 +16,6 @@ images:
 **Review of the Paper: MedBN: Robust Test-Time Adaptation against Malicious Test Samples** **Paper Link:** [arXiv:2403.19326](https://arxiv.org/abs/2403.19326)
 
 **Review of the Paper: R.I.P. : A Simple Black-box Attack on Continual Test-time Adaptation** **Paper Link:** [arXiv:2412.01154](https://arxiv.org/abs/2412.01154)
-
 
 I had the opportunity to present this paper in our CCDS Lab at IUB, which led to a thought-provoking discussion with lab members and my supervisors on the paper's methodology and its implications in advancing distribution adjustment research. Below, I am sharing the presentation slides for those interested.
 

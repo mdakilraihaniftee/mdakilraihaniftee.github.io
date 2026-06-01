@@ -54,11 +54,10 @@ category: Ongoing Research
 
 ## 🔖 References
 
-1. Md. Akil Raihan Iftee et al., “FedBalanceTTA – Federated Learning with Balanced Test Time Adaptation,” *ICONIP 2025* (Accepted).
-2. Wang et al., “Tent: Fully Test-Time Adaptation by Entropy Minimization,” *ICLR*, 2021.
-3. Wang et al., “Continual Test-Time Domain Adaptation,” *CVPR*, 2022.
-4. Yuan et al., “Robust Test-Time Adaptation in Dynamic Scenarios,” *CVPR*, 2023.
-5. Shao et al., “Federated Face Anti-Spoofing with Test-Time Adaptation,” *FG*, 2021.
+1. Md. Akil Raihan Iftee et al., “FedBalanceTTA – Federated Learning with Balanced Test Time Adaptation,” _ICONIP 2025_ (Accepted).
+2. Wang et al., “Tent: Fully Test-Time Adaptation by Entropy Minimization,” _ICLR_, 2021.
+3. Wang et al., “Continual Test-Time Domain Adaptation,” _CVPR_, 2022.
+4. Yuan et al., “Robust Test-Time Adaptation in Dynamic Scenarios,” _CVPR_, 2023.
+5. Shao et al., “Federated Face Anti-Spoofing with Test-Time Adaptation,” _FG_, 2021.
 
 ---
-

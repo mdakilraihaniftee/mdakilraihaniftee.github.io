@@ -57,10 +57,10 @@ category: Ongoing Research
 
 ## 🔖 References
 
-1. H. Liu et al., “LLAVA: Large Language and Vision Assistant,” *arXiv:2304.08485*, 2023.  
-2. M. Kirillov et al., “Segment Anything,” *arXiv:2304.02643*, 2023.  
-3. R. Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models,” *CVPR*, 2022.  
-4. K. Zhang et al., “Text-Guided Image Inpainting with Masked Diffusion,” *CVPR*, 2023.  
-5. J. Lu et al., “Unified Vision-Language Interface for Image Editing,” *arXiv:2310.12345*, 2023.
+1. H. Liu et al., “LLAVA: Large Language and Vision Assistant,” _arXiv:2304.08485_, 2023.
+2. M. Kirillov et al., “Segment Anything,” _arXiv:2304.02643_, 2023.
+3. R. Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models,” _CVPR_, 2022.
+4. K. Zhang et al., “Text-Guided Image Inpainting with Masked Diffusion,” _CVPR_, 2023.
+5. J. Lu et al., “Unified Vision-Language Interface for Image Editing,” _arXiv:2310.12345_, 2023.
 
 ---

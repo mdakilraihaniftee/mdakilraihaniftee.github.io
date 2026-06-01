@@ -78,3 +78,4 @@ SELECT video_title, view_count
 FROM videos
 ORDER BY view_count DESC
 FETCH FIRST 5 ROWS ONLY;
+```
