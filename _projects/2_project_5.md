@@ -67,7 +67,7 @@ appsettings.json: Configuration settings for the application.
    ```bash
    dotnet run
    ```
-5. Access the app in your browser at https://localhost:5001 or http://localhost:5000.
+5. 5. Access the app in your browser at `https://localhost:5001` or `http://localhost:5000`.
 
 ## Prerequisites
 
