@@ -48,7 +48,8 @@ nav_order: 6
 
   [Video Playlist](https://www.youtube.com/playlist?list=PLwize1zvRE1iCM_K0iymTEtIIXnow6vel) (This playlist is made only for practicing. So, first you need to understand the theory by yourself/classes. Don't see them for memorizing. While Watching Videos, First, Understand the Question, then Pause, Think and Solve by yourself and Finally, See the solution for verification. Never See the Solution first)
 
-  [Practice Week 1](https://docs.google.com/document/d/1YADASoSc9FlKSSm0YQrbOEAWvlCj5eAS7C9BZzFVk5Q/edit?usp=sharing) -Linked Lists (all sections) 
+  [Practice Week 1](https://docs.google.com/document/d/1YADASoSc9FlKSSm0YQrbOEAWvlCj5eAS7C9BZzFVk5Q/edit?usp=sharing) -Linked Lists (all sections)
+  [Practice Week 2](https://docs.google.com/document/d/1Qq3e8qMQInGm-aQFbeW_ToVa6bgIvBYc3oLbakkSto8/edit?usp=sharing) -Linked Lists (all sections)
 
 ---
 
