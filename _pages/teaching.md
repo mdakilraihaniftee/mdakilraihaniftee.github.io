@@ -52,6 +52,7 @@ nav_order: 6
   [Practice Week 2](https://docs.google.com/document/d/1Qq3e8qMQInGm-aQFbeW_ToVa6bgIvBYc3oLbakkSto8/edit?usp=sharing) -Linked Lists (all sections)
 
 ---
+Give Feedback? [Link](https://docs.google.com/forms/d/e/1FAIpQLSdSmSAc7H9sSJgybfV6A0fa3Oh2UaSgznBILtJ6P1NrKqzhEw/viewform?usp=sharing&ouid=107766485667934422583) 
 
 More updates and course materials coming soon!
 
