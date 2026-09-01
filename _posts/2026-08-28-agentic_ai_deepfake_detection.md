@@ -5,7 +5,7 @@ date: 2026-08-28 11:30:00
 description:
 tags:
 categories: paper-review
-thumbnail: assets/img/paper_review/agentic_deepfake.jpeg
+thumbnail: assets/img/paper_review/deepfake.png
 images:
   compare: false
   slider: true
