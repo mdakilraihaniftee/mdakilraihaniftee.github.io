@@ -5,7 +5,7 @@ date: 2026-08-28 11:30:00
 description:
 tags:
 categories: paper-review
-thumbnail: assets/img/paper_review/trustworthy_agentic_ai.jpeg
+thumbnail: assets/img/paper_review/trustworthy_agentic_ai.png
 images:
   compare: false
   slider: true
